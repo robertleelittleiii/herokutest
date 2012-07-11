@@ -38,7 +38,9 @@ gem 'nokogiri'
 gem 'rails3-generators'
 gem 'supermodel'
 gem 'ledermann-rails-settings', :require => 'rails-settings'
-
+group :production do
+  gem 'pg'
+end
 # installed as plutin instead 
 # gem "best_in_place"
 gem 'acts-as-taggable-on', '~> 2.2.2'

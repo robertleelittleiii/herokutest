@@ -8,3 +8,4 @@
 /.bundle/
 /log/development.log
 /scrapi/
+/.hg/
