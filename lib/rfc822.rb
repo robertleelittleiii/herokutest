@@ -1,4 +1,4 @@
-
+# encoding: binary
 # RFC822 Email Address Regex
 # --------------------------
 #
@@ -10,8 +10,6 @@
 # Licensed under a Creative Commons Attribution-ShareAlike 2.5 License
 # http://creativecommons.org/licenses/by-sa/2.5/
 #
-#!/bin/env ruby
-# encoding: utf-8
 module RFC822
   EmailAddress = begin
     qtext = '[^\\x0d\\x22\\x5c\\x80-\\xff]'
