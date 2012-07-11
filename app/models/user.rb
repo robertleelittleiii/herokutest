@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates_presence_of     :name
   validates_uniqueness_of   :name
 
-validates_format_of :name,
+  validates_format_of :name,
    :with => EmailAddress,
    :message=> 'must be a valid email address. i.e. user@doman.com'
 
