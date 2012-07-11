@@ -3,7 +3,6 @@
 /public/system/
 /tmp/
 /app/.svn.old/
-Gemfile.lock
 /config/database.yml
 /log/
 /.bundle/
