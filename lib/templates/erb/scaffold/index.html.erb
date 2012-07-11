@@ -1,0 +1,35 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <%% if flash[:notice] -%>
+      <div id="notice"><%%= flash[:notice] %></div>
+    <%% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="site-pref-list">
+    <h1  class="myaccountheader"><%= human_name %></h1>
+
+    <center><%%= link_to 'New <%= human_name %>', :action=>:create_empty_record,:typeofrecord=>"<%= singular_table_name %>" %></center>
+
+    <%%  @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+      <div class="hr"></div>
+      <table width ="100%"cellpadding="5" cellspacing="0">
+        <tr class="list-table" valign="top" class="<%%= cycle('list-line-odd', 'list-line-even') %>"  onclick = "window.location.href ='<%%=url_for(:controller => '<%= plural_table_name %>', :id => <%= singular_table_name %>.id,  :action => 'edit')%>' "  style = "cursor:pointer" >
+             <% attributes.each do |attribute| -%>
+         <td align="left">
+    <span class="list-title"><%%= <%= singular_table_name %>.<%= attribute.name %> %></span>
+          </td>
+          <% end -%>
+
+        </tr>
+      </table>
+      <div align="right" class="image-delete-list" >
+        <%%=link_to image_tag ("Button-Delete.png", :border=>"0") , <%= singular_table_name %>,:on_click=>"", :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <%% end %>
+    <div class="hr"></div>
+
+  </div>
+    <center><%%= link_to 'New <%= human_name %>', :action=>:create_empty_record,:typeofrecord=>"<%= singular_table_name %>" %></center>
+</div>

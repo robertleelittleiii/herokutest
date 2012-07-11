@@ -1,0 +1,14 @@
+<% selected=0  %>
+<% @product_sizes.each_with_index do |size, index| %>
+  <% if size.units_in_stock.to_i > 0 and selected==0 then
+    selected=1
+    size_selected=true
+  else
+    size_selected=false
+  end rescue size_selected=false
+%>
+
+  <div class="<%=(size_selected ? 'size-selected ': '')+ (size.units_in_stock.to_i> 0 ? "product-size-item" : "product-size-inactive") rescue ""%>">
+    <%=size[:size]%>
+  </div>
+<% end %>

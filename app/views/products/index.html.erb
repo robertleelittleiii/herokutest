@@ -1,0 +1,39 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="site-pref-list">
+    <h1  class="myaccountheader">Product</h1>
+
+    <p>
+    <center><%= link_to 'New Product', {:action=>:create_empty_record,:typeofrecord=>"product"}, :class=>"button-link"%></center>
+    </br>
+  </p>
+  
+    <table cellpadding="0" cellspacing="0" border="0" class="display" id="product-table">
+      <thead>
+        <tr>
+          <th>Style</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>-</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <th>Style</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>-</th>
+        </tr>
+      </tfoot>
+    </table>
+</div>

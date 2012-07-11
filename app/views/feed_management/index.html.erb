@@ -1,0 +1,19 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="data-feed-tools">
+    <h1  class="myaccountheader">Data Feed Management</h1>
+
+    <center><%= link_to 'Import Excel File', :action=>:importfile%></center>
+    <hr>
+        <center><%= link_to 'Sync with Volusion System', :action=>:webservicesync%></center>
+
+    
+  </div>
+</div>

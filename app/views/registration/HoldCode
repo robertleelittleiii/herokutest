@@ -1,0 +1,56 @@
+from Register Customer
+
+		<div class="loginSpan" style="display:table-row">
+		   <div class="loginSpan" style="display:table-cell">
+			<DIV CLASS="registrationheader">
+				Enter User Details as a <%=@role_name %>
+			</DIV>
+
+			<DIV CLASS="registrationArea">
+				<DIV CLASS="L11G" STYLE="margin-bottom:10px">Please fill out this form to register.</DIV>
+				<BR>
+
+	<div id="ds_component">
+    <% form_tag :action => 'registration'  do %>
+		<table cellspacing=0 class="ds_login">
+
+			<tr>
+				<td>
+                  <label for="name">Email Address:</label> <%= text_field 'user', 'name'  %><p>
+                </td>
+			</tr>
+			<tr>
+				<td>
+                  <label for="user_password">Password:</label> <%= password_field 'user', 'password'  %><p>
+				</td>
+
+                <td>
+                   <label for="user_password_confirmation">Confirm:</label> <%= password_field 'user', 'password_confirmation'  %><p>
+				</td>
+			</tr>
+            <tr>
+              <td>
+                <label for="user_attribute_first_name">First Name:</label> <%= text_field 'user_attribute', 'first_name'  %><p>
+                <label for="user_attribute_Last_name">Last Name:</label> <%= text_field 'user_attribute', 'last_name'  %><p>
+                <label for="user_attribute_Handle">Handle:</label> <%= text_field 'user_attribute', 'handle'  %><p>
+                <lable for="user_attribute_birthdate">Birthdate:</label> <%=date_select 'user_attribute', 'birthdate' ,:start_year=>1900, :end_year=>2000 , :order => [:month,:day,:year] %><p>
+
+              </td>
+            </tr>
+			<tr>
+				<td><%= submit_tag "Register" %></td>
+			</tr>
+		</table>
+
+
+<% fields_for :register do |r| %>
+<%= r.hidden_field :role, :value=>@role_name%><br/>
+<%= r.hidden_field :regtype, :value=>action_name%><br/>
+<%end%>
+
+    <% end %>
+	</div>
+			</DIV>
+
+		</div>
+        </div>

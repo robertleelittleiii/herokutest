@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  credit_card_type: MyString
+  credit_card_expires: 2012-05-21
+  ip_address: MyString
+
+two:
+  user_id: 1
+  credit_card_type: MyString
+  credit_card_expires: 2012-05-21
+  ip_address: MyString

@@ -1,0 +1,64 @@
+  <div class="loginCell">
+    <DIV CLASS="registrationheader">
+	Create a New Account <%=@role_name %>
+    </DIV>
+
+    <DIV CLASS="registrationArea">
+	<DIV CLASS="L11G" STYLE="margin-bottom:10px">Please fill out this form to register.</DIV>
+	<BR>
+
+	<div id="ds_component">
+          <%@role_name="Customer"%>
+          <%=form_for :registration, :url => {:controller=>"registration", :action => "registration" } do |f| -%>
+            <%# form_tag :controller=>"registration", :action => 'registration'  do |f| %>
+		<table cellspacing=0 class="ds_login">
+                    <%#*<tr>%>
+                      <%#*<td>%>
+                        <%#*<lable for="user_attribute_birthdate">Birthdate:</label> <br>%>
+                        <%#= fields_for :user_attributes do |a|%>
+                        <%#=a.date_select  'birthdate' ,:start_year=>1900, :end_year=>2000 , :order => [:month,:day,:year] %><p>
+                        <%#end%>
+                      <%#*</td>%>
+                    <%#*</tr>%>
+                   <%= fields_for :user do |u|%>
+                    <tr>
+                      <td>
+                        <label for="name">User id (email address):</label><br>
+                        <%= u.text_field  'name'  %><p>
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <label for="user_password">Password:</label><br>
+                        <%= u.password_field  'password'  %><p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                         <label for="user_password_confirmation">Re-Type Password:</label><br>
+                        <%= u.password_field 'password_confirmation'  %><p>
+                      </td>
+                    </tr>
+                    <%end%>
+                    <tr>
+                      <td>
+                         <p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><%= submit_tag("Register") %></td>
+                      <%#= image_submit_tag("Register_Button.jpg",:alt=>"Register", :border=>"0" ) %>
+                    </tr>
+		</table>
+        
+
+             <%=fields_for :register do |r| -%>
+                  <%= r.hidden_field :role, :value=>"Customer"%><br/>
+                  <%= r.hidden_field :regtype, :value=>action_name%><br/>
+              <%end%>
+          <%end%>
+	</div>
+    </DIV>
+</div>
+
+

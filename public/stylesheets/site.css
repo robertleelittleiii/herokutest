@@ -1,0 +1,814 @@
+/* 
+    Document   : site
+    Created on : Jan 2, 2012, 11:54:35 AM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+@import "jquery.jqzoom.css"; 
+
+root { 
+    display: block;
+}
+
+
+#slideshow { 
+    margin: 0 auto; 
+}
+
+#nav { 
+    margin: 5px; 
+}
+
+#nav a { 
+    margin: 5px; 
+    padding: 3px 5px; 
+    border: 1px solid #ccc; 
+    background: #fc0; 
+    text-decoration: none; 
+}
+
+#nav a.activeSlide {
+    background: #ea0;
+}
+
+#nav a:focus {
+    outline: none; 
+}
+
+.pics { 
+    height: 250px; 
+    width: 220px; 
+    padding:0; 
+    margin:0; 
+    overflow: hidden;
+}
+.pics img { 
+    height: 200px; 
+    width: 200px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    background-color: #eee; 
+    top:0; 
+    left:0;
+}
+
+.pics img {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+
+#slides .next, #slides .prev {
+    position: absolute;
+    top: 107px;
+    left: -24px;
+    width: 23px;
+    height: 43px;
+    display: block;
+    z-index: 101;
+}
+.pagination {
+    margin:0px auto 0;
+    width:100px;
+}
+
+
+.pagination li {
+    float:left;
+    margin:0 1px;
+    list-style:none;
+}
+
+.pagination li a {
+    display:block;
+    width:12px;
+    height:0;
+    padding-top:12px;
+    background-image:url(/images/interface/pagination.png);
+    background-position:0 0;
+    float:left;
+    overflow:hidden;
+}
+
+.pagination li.current a {
+    background-position:0 -12px;
+}
+
+#frame {
+    position:absolute;
+    z-index:0;
+    width:739px;
+    height:341px;
+    top:-3px;
+    left:-80px;
+}
+
+#slides {
+    position:relative;
+    top:0px;
+    left:4px;
+    z-index:100;
+}
+
+#slides p img {
+
+    margin-top:-10px;
+}
+
+#slides .next,#slides .prev {
+    position:absolute;
+    top:107px;
+    left:-39px;
+    width:24px;
+    height:43px;
+    display:block;
+    z-index:101;
+}
+.slides_container {
+    width:1024px;
+    height:170px;
+}
+.slides_container div {
+    width:1024px;
+    height:170px;
+    display:block;
+}
+
+
+#slides .next {
+    left:585px;
+}
+
+
+/*Product items section*/
+
+
+#product-list {
+    display: inline-block;
+
+}
+
+.product-row {
+    display: inline-block;
+    width: 820px;
+    float:left;
+
+}
+
+.product-item {
+    border: dotted white 1px;
+    width: 188px;
+    height: 300px;
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+    border-image: initial;
+}
+
+.product-picture {
+    margin: 15px 0px 0px 0px;
+   height:240px;
+    position: relative;
+}
+.product-price {
+    font-family: DINWeb-Regular,verdana,tahoma,arial,helvetica,clean,sans-serif;
+
+    text-align: center;
+    font-size: 12pt;
+    margin: 4px 0px 0px 0px;
+
+}
+
+.product-name {
+    font-family: DINWeb-Regular,verdana,tahoma,arial,helvetica,clean,sans-serif;
+
+    text-align: center;
+    font-size: 9pt;
+    text-transform: capitalize; 
+
+}
+
+.product-item a  {
+    text-decoration: none;
+    color:black;
+}
+
+.product-item:hover {
+    cursor: pointer;
+
+}
+
+/*Pagination Section*/
+
+
+.pagination {
+
+    width: 500px;
+    font-size: 8pt;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+
+}
+.product-counts {
+    float: left;
+    font-size: 9pt;
+    padding-top: 3px;
+}
+.pagination-div {
+    min-height: 14px;
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    background: lightgray;
+    padding-left: 10px;    
+}
+.pagination a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+}
+.pagination span.current {
+
+}
+
+.pagination span.active {
+
+}
+
+.pagination span.prev {
+
+}
+
+.pagination span.prev a{
+
+}
+
+.pagination span.last {
+
+
+}
+.pagination span.last a{
+
+
+}
+
+.pagination span.page{
+
+
+}
+pagination span.page a{
+
+
+}
+
+.pagination span.first {
+
+}
+.pagination span.first a {
+
+}
+
+.pagination span.page gap {
+
+}
+
+.pagination span.next {
+
+}
+
+.pagination-link a:active {
+
+
+    /* IE10 */ 
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #ABABAB 0%, #FFFFFF 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #ABABAB 0%, #FFFFFF 100%);
+
+    /* Opera */ 
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #ABABAB 0%, #FFFFFF 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #ABABAB), color-stop(1, #FFFFFF));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #ABABAB 0%, #FFFFFF 100%);
+
+    /* Proposed W3C Markup */ 
+    background-image: radial-gradient(left top, ellipse farthest-corner, #ABABAB 0%, #FFFFFF 100%);
+
+
+
+    color: #000;
+    outline: none; /* hide dotted outline in Firefox */
+    padding: 3px 4px 1px 8px; /* push text down 1px */
+
+
+}
+
+a.navigation-link:active {
+
+
+    /* IE10 */ 
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Opera */ 
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #0080FF), color-stop(1, #FFFFFF));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Proposed W3C Markup */ 
+    background-image: radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+
+    background-color: #4da6FF;
+    color: #DDDDDD;
+    outline: none; /* hide dotted outline in Firefox */
+    padding: 5px 6px 3px 10px; /* push text down 1px */
+    text-shadow: 1px 1px gray ;
+
+
+}
+
+
+
+
+a.navigation-link{
+    background-color: #4da6FF;
+    color:white;
+    border: 1px black solid;
+    border-radius: 8px;
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #FFFFFF), color-stop(1, #0080FF));
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    margin: 2px;
+    padding: 4px 5px 4px 11px;
+    border-image: initial;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bolder;
+    text-shadow: -1px -1px gray ;
+
+}
+
+
+.pagination-link a{
+    border: 1px black solid;
+    border-radius: 8px;
+
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #ABABAB 100%);
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #ABABAB 100%);
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #ABABAB 100%);
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #FFFFFF), color-stop(1, #ABABAB));
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #ABABAB 100%);
+    background-image: radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #ABABAB 100%);
+    margin: 2px;
+    padding: 2px 3px 2px 9px;
+    border-image: initial;
+
+}
+
+.pagination span.next a{
+
+
+}
+
+.zoomPad {
+min-height: 500px;
+}
+/*Product detail page */
+
+#product-header {
+    height: 40px;
+    margin-top: 20px;
+}
+
+#product-thumbs {
+    width: 400px;
+display: inline-block;
+margin-top: 40px;
+/* 
+position: absolute;
+left:30px;
+*/
+bottom: 0px;
+margin-left: 0px;
+
+}
+
+.product-thumb-item {
+    text-decoration: none;
+
+}
+
+#product-main-image {
+    width: 400px;
+    display: block;
+    position: relative;
+    float: left;
+    min-height: 650px;
+}
+
+.zoomThumbActive img {
+    border: 1px dotted black;
+    margin: 0px;
+    padding: 3px;
+    border-image: initial;
+}
+
+
+#supplier-product-id {
+    font-size: 10px;
+    color: darkRed;
+    font-variant: small-caps;
+    width: 365px;
+    text-align: right;
+
+}
+
+#distributor-info {
+    font-size:32pt;
+    color:darkgray;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+#product-info-block {
+    display: inline-block;
+    width: 400px;
+    margin-left: 20px;
+
+}
+
+#product-name {
+    font-size:22pt;
+    font-weight:bolder;
+    margin-top:5px;
+
+
+}
+
+#product-price {
+    font-size: 16px;
+    margin-top:5px;
+
+}
+
+#product-description {
+    font-size: 10pt;
+    text-align: justify;
+    margin: 15px 0px 15px 0px;
+    border: 1px black dotted;
+    padding: 10px;
+    border-image: initial;
+    max-height: 280px;
+    overflow: auto;
+    font-weight:normal;
+
+}
+
+.color-swatch-item {
+    font-size: 9px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20p;
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 6px;
+    font-weight:normal;
+}
+.product-legend {
+    font-size: 13px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#product-colors {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.swatch-selected {
+    border: 4px black solid !important;
+    padding: 1px !important;
+}
+
+.product-swatch {
+    border: 1px grey solid;
+    padding: 4px;
+
+}
+
+.product-size-item {
+    border: 1px grey solid;
+    font-size: 9pt;
+    font-variant: small-caps;
+    padding: 2px;
+    text-align: center;
+    margin: 5px;
+    display: inline-block;
+    border-image: initial;
+    padding: 2px 11px 2px 11px;
+    font-weight: normal;
+}
+
+.product-size-inactive {
+    background-color: grey;
+    border: 1px grey solid;
+    font-size: 9pt;
+    font-variant: small-caps;
+    padding: 2px;
+    text-align: center;
+    margin: 5px;
+    display: inline-block;
+    border-image: initial;
+    padding: 2px 11px 2px 11px;
+    font-weight: normal;
+
+}
+#product-size {
+    margin-bottom: 15px;
+}
+
+#product-body {
+    min-height: 510px;
+}
+
+input#quantity {
+    background: #DDD;
+    margin-left: 10px;
+    margin-top: 8px;
+    text-align: center;
+}
+.size-selected {
+    border: 2px black solid !important;
+    padding: 1px 8px 1px 8px !important;
+    background: darkRed;
+    COLOR: WHITE;
+    font-weight: bold;
+    border-image: initial;
+}
+
+.product-size-item:hover {
+    cursor:pointer;
+
+}
+
+.product-swatch:hover {
+    cursor:pointer;
+
+}
+
+#add-to-cart-div {
+
+
+}
+
+#total-cost {
+    display: inline-block;
+    min-width: 100px;
+    min-height: 50px;
+    vertical-align: top;
+}
+
+#card-form {
+    display: inline-block;
+    min-width: 100px;
+    min-height: 50px;
+    vertical-align: top;
+}
+
+#add-to-cart-div {
+    width: 366px;
+    display: inline-block;
+    height: 50px;
+}
+
+#total-cost-dollars {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+#add-to-cart-section {
+    display: inline-block;
+    min-width: 100px;
+    min-height: 50px;
+    vertical-align: baseline;
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+
+/*Shopping Cart CSS*/
+
+.cart-item-size-color {
+    font-size: 9px;
+    text-align: center;
+}
+
+.cart-item-title {
+    font-size: 14pt;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.cart-item-description {
+    font-size: 10pt;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 40px;
+}
+
+.item-price {
+    font-size: 9pt;
+}
+
+.item-price-info {
+    font-size: 7pt;
+
+
+}
+.cart-header {
+    background-color: lightGrey;
+    font-weight: bolder;
+    font-size: 12px;
+    font-variant: small-caps;
+    border: lightgray 3px solid;
+    border-image: initial;
+    height: 35PX;
+}
+
+.cart-title {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 33pt;
+    padding-left: 10px;
+    font-weight: bolder;
+}
+
+.nav-cart-bottom {
+
+}
+
+.nav-cart-left {
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:10px;
+
+    float:left;
+}
+
+.nav-cart-right {
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:10px;
+
+    float:right;
+}
+
+.nav-cart-bottom {
+    height: 40px;
+    background: lightgray;
+    position: relative;
+    Width: 1010px;
+    padding-top: 10px;
+    margin-top: 20px;
+
+}
+
+.cart-summary {
+    width: 50%;
+    position: relative;
+    min-height: 200px;
+    float: right;
+}
+
+.cart-summary-header {
+    background: lightgray;
+    margin: 10px 10px 0px 10px;
+}
+
+.cart-summary-body {
+    margin: 0px 10px 10px 10px;
+}
+
+.cart-shipping {
+    width: 50%;
+    position: relative;
+    float: left;
+    min-height: 200px;
+}
+.cart-header-font {
+    font-variant: small-caps;
+    font-size: 14pt;
+    font-weight: bolder;
+
+}
+.cart-shipping-header {
+    background: lightgray;
+    margin: 10px 10px 0px 10px;
+}
+
+.cart-shipping-body {
+    margin: 0px 10px 10px 10px;
+
+}
+.cart-summary-section {
+    display: inline-block;
+    width: 1010px;
+}
+
+.cart-summary-price {
+    float: right;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+#cart-summary-price {
+    color:red;
+
+}
+
+.cart-sumamry-row {
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90%;
+    height: 20px;
+    margin-top: 0px;
+    border-bottom: lightgray dotted 1px;
+}
+
+.cart-summary-title {
+    float:left;
+
+    font-style: oblique;
+    font-size: 13px;
+}
+
+#edit-product {
+    position: absolute;
+    z-index: 20;
+    width: 20px;
+    height: 20px;
+    MARGIN-TOP: 20px;
+    margin-left: 20px;
+    border-image: initial;
+}
+
+.cart-item-title a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+#edit-slider {
+position: absolute;
+top: 40px;
+left: 30px;
+width: 20px;
+height: 20px;
+}
+
+.cart-shipping-body a {
+    text-align: right;
+    font-size: 7pt;
+    text-decoration: none;
+    margin-left: -400px;
+    color: black;
+    border-image: initial;
+}
+
+.product-image {
+    display: table-cell;
+    margin: auto;
+
+   /* height:240px;*/
+
+}
+
+.product-float {
+    display: table-cell;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    width: 180px;
+
+}

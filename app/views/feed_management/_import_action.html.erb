@@ -1,0 +1,60 @@
+      <div class="filesection">
+          <p>
+            <b>From File:</b><br>
+
+            <!-- START:hidden_div -->
+            <%= hidden_div_if(@importer.file_atts.empty?, :id => "files") %>
+<%#= render(:partial => "/files/files", :object => @files) %>
+            <%= render(:partial => "/files/files", :object => @importer.file_atts) %>
+
+            <%="</div>".html_safe %>
+
+
+            <%= hidden_div_if(@importer.file_atts.count >= @filestoshow, :id => "filebutton") %>
+            <%=render(:partial => "/files/filebutton")%>
+            <%="</div>".html_safe %>
+
+
+
+        </div> 
+        <div id="table-section">
+          <p>
+            <b>Import into Table:</b><br>
+
+            <%#= select_tag(@selected_model, options_for_select(@model_names, 0), :id=>"model-name")%>
+            <%=ajax_select2("table_name","importer",@importer, @model_names, :class=>"model-name")%>
+
+          </p>
+
+
+        </div>
+
+        <div id="add-column-map">
+
+          <div id="sheet-columns">  
+<%#=render(:partial => "sheet_columns")%>
+          </div> 
+          <div id="map-to">
+            Map To
+          </div>
+          <div id="table-columns">
+            <%=render(:partial => "columns")%>
+          </div>
+          <div id="map-to-button">
+
+          </div>
+        </div>
+        <div id="importer-item-list">
+          <p>      
+            <%=render(:partial => "importer_items_list")%>
+          </p>
+        </div>
+        </p>
+        <p>
+        <div id="import-button">
+   <%=button_to( "Run Import", {:action=>:import_sheet,:importer_id=>@importer.id }, :remote=>true, :id=>"run-importer")%>
+        </div>
+        <div id="import-progress-block">
+  
+        </div>
+</p>

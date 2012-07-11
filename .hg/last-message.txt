@@ -1,0 +1,1 @@
+Added html_safe to name of products.  Removed the 30 pix left margin from product-thumbs.

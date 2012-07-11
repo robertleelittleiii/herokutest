@@ -1,0 +1,2 @@
+<div id="importer-id" class="hidden-item"><%=@current_importer%></div>
+<%= select_tag(@current_importer, options_for_select (@importers.collect{|item| [item.name, item.id]}, @current_importer),:id=>"importer-name", :include_blank=>"Select or New-->")%> 

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Importer:</b>
+  <%= @importer_item.importer_id %>
+</p>
+
+<p>
+  <b>From column:</b>
+  <%= @importer_item.from_column %>
+</p>
+
+<p>
+  <b>From column name:</b>
+  <%= @importer_item.from_column_name %>
+</p>
+
+<p>
+  <b>To column:</b>
+  <%= @importer_item.to_column %>
+</p>
+
+<p>
+  <b>To column name:</b>
+  <%= @importer_item.to_column_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_importer_item_path(@importer_item) %> |
+<%= link_to 'Back', importer_items_path %>

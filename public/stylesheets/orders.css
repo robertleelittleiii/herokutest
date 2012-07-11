@@ -1,0 +1,387 @@
+/* 
+    Document   : order
+    Created on : May 21, 2012, 9:38:33 PM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.billing-address {
+display: inline-block;
+width: 47%;
+border: black solid 1px;
+padding: 10px;
+}
+.shipping-address {
+display: inline-block;
+width: 47%;
+border: black solid 1px;
+padding: 10px;
+}
+
+
+input.navigation-link:active {
+
+
+    /* IE10 */ 
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Opera */ 
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #0080FF), color-stop(1, #FFFFFF));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Proposed W3C Markup */ 
+    background-image: radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+
+    background-color: #4da6FF;
+    color: #DDDDDD;
+    outline: none; /* hide dotted outline in Firefox */
+    padding: 5px 6px 3px 10px; /* push text down 1px */
+    text-shadow: 1px 1px gray ;
+
+
+}
+
+
+
+
+input.navigation-link{
+    color:white;
+    background-color: #4da6FF;
+    border: 1px black solid;
+    border-radius: 8px;
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #FFFFFF), color-stop(1, #0080FF));
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+margin: -3px 1px 1px 1px;
+padding: 4px 5px 4px 11px;
+    border-image: initial;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bolder;
+    text-shadow: -1px -1px gray ;
+
+}
+
+.shipping-address legend {
+background: lightgray;
+padding-top: 3px;
+padding-bottom: 3px;
+font-weight: bold;
+font-variant: small-caps;
+text-align: center;
+}
+
+
+
+.shipping-address input  {
+    
+    border-right: 1px grey dotted;
+    border-bottom: 1px grey dotted;
+    
+}
+
+.shipping-address b {
+font-size: 14px;
+font-variant: small-caps;
+}
+
+.address-title {
+        font-size:15pt;
+
+text-align: center;
+font-weight: bold;
+font-variant: small-caps;
+background: lightGrey;
+width: 104%;
+margin-left: -10px;
+margin-top: -10px;
+height: 32px;
+
+}
+
+.credit-card-title {
+    font-size:15pt;
+text-align: center;
+font-weight: bold;
+font-variant: small-caps;
+background: lightGrey;
+width: 102%;
+margin-left: -10px;
+margin-top: -10px;
+height: 32px;
+display:block !important;
+
+}
+.billing-address input  {
+    
+    border-right: 1px grey dotted;
+    border-bottom: 1px grey dotted;
+    
+}
+
+.billing-address b {
+font-size: 14px;
+font-variant: small-caps;
+}
+
+.credit-card-info {
+    display: inline-block;
+width: 97%;
+border: black solid 1px;
+padding: 10px;
+margin-top: 20px;
+/*padding: 10px;*/
+}
+
+.credit-card-info b {
+font-size: 14px;
+font-variant: small-caps;
+}
+
+.credit-card-info div {
+display: inline-block;
+margin-right:25px;
+}
+
+.credit-card-info input  {
+    
+    border-right: 1px grey dotted;
+    border-bottom: 1px grey dotted;
+    
+}
+.cart-title {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 33pt;
+    padding-left: 10px;
+    font-weight: bolder;
+    
+}
+
+
+.nav-cart-bottom {
+
+}
+
+.nav-cart-left {
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:10px;
+
+    float:left;
+}
+
+.nav-cart-right {
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:10px;
+
+    float:right;
+}
+
+.nav-cart-bottom {
+    height: 40px;
+    background: lightgray;
+    position: relative;
+    Width: 1010px;
+    padding-top: 10px;
+    margin-top: 20px;
+
+}
+
+
+a.navigation-link:active {
+
+
+    /* IE10 */ 
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Mozilla Firefox */ 
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Opera */ 
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #0080FF), color-stop(1, #FFFFFF));
+
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+    /* Proposed W3C Markup */ 
+    background-image: radial-gradient(left top, ellipse farthest-corner, #0080FF 0%, #FFFFFF 100%);
+
+
+    background-color: #4da6FF;
+    color: #DDDDDD;
+    outline: none; /* hide dotted outline in Firefox */
+    padding: 5px 6px 3px 10px; /* push text down 1px */
+    text-shadow: 1px 1px gray ;
+
+
+}
+
+
+
+
+a.navigation-link{
+    color:white;
+        background-color: #4da6FF;
+    border: 1px black solid;
+    border-radius: 8px;
+    background-image: -ms-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -moz-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -o-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: -webkit-gradient(radial, left top, 0, left top, 1002, color-stop(0, #FFFFFF), color-stop(1, #0080FF));
+    background-image: -webkit-radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    background-image: radial-gradient(left top, ellipse farthest-corner, #FFFFFF 0%, #0080FF 100%);
+    margin: 2px;
+    padding: 4px 5px 4px 11px;
+    border-image: initial;
+
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bolder;
+    text-shadow: -1px -1px gray ;
+
+}
+
+
+.field_with_errors {
+padding: 1px;
+background-color: red;
+display: inline-block;}
+
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+  text-align: left;
+}
+
+#invoice-frame {
+border: black solid 1px;
+display: inline-block;
+height: 1200px;
+overflow: auto;
+width: 1000px;
+border-image: initial;
+}
+
+.cart-header {
+    background-color: lightGrey;
+    font-weight: bolder;
+    font-size: 12px;
+    font-variant: small-caps;
+    border: lightgray 3px solid;
+    border-image: initial;
+    height: 35PX;
+}
+
+#invoice-tools {
+display: inline-block;
+width: 585px;
+border: black 1px dotted;
+height: 480px;
+border-image: initial;
+vertical-align: top;
+
+}
+
+
+#zoom-invoice {
+display: inline-block;
+margin-right: 848px;
+}
+
+#invoice-tools-title {
+text-align: center;
+font-size: 40pt;
+margin-bottom: 20px;
+font-family: fantasy;
+margin-top: 40px;
+color: #4DA6FF;
+}
+
+#invoice-tools-body {
+padding: 20px;
+font-family: serif;
+font-weight: lighter;
+line-height: 20pt;
+}
+
+
+
+
+
+div.shipping-address div div {
+    display:inline-block;
+    
+}
+
+div.billing-address div div {
+    display:inline-block;
+    
+}
+
+
+#copy-to-billing a {
+font-size: 10pt;
+z-index: 200;
+position: absolute;
+margin-left: 49px;
+font-family: sans-serif;
+background: grey;
+color: white;
+padding: 0px 5px 2px 5px;
+margin-top: -16px;
+}
+
+#copy-to-billing a:active {
+padding: 1px 6px 1px 4px;
+
+
+}

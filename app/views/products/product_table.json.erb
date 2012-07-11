@@ -1,0 +1,13 @@
+{"sEcho": <%= params[:sEcho] || -1 %>,
+ "iTotalRecords": <%= @total_objects %>,
+ "iTotalDisplayRecords": <%= @total_objects %>,
+ "aaData":[
+<% @objects.each do |product| %>
+  [
+   "<%= product.supplier_product_id%> <div id='product-id' class='hidden-item'> <%= product.id%></div> ",
+   "<%= product.product_name %>",
+   "<%= truncate(product.product_description, :length => 17) %>",
+   "<%=link_to(image_tag('interface/delete.png', :border=>"0"),{ :action=>:delete_ajax, :id=>product.id},{ :confirm => "Are you sure?", :id=>"delete-product-item", :remote=>true}).gsub(/\\|"/) { |c| "\\#{c}" } %>"
+  ] <% if @objects.last != product then %> , <% end %>
+<% end %>
+]}

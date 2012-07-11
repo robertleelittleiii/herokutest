@@ -1,0 +1,39 @@
+<div class="myaccountblock" Align="Left">
+    <div align="center">
+    <!-- START:flash -->
+    <%% if notice -%>
+      <div id="notice"><%%= notice  %></div>
+    <%% end -%>
+    <!-- END:flash -->
+    
+    <%% if @<%= singular_table_name %>.errors.any? %>
+    <div id="error_explanation">
+      <h2><%%= pluralize(@<%= singular_table_name %>.errors.count, "error") %> prohibited this <%= singular_table_name %> from being saved:</h2>
+
+      <ul>
+      <%% @<%= singular_table_name %>.errors.full_messages.each do |msg| %>
+        <li><%%= msg %></li>
+      <%% end %>
+      </ul>
+    </div>
+  <%% end %>
+    
+  </div>
+
+  <div class="myaccountheader">Edit <%= human_name %></div>
+  <div class="myaccountsection">
+    <div class="myaccountheading">Information for <%= singular_table_name %></div>
+    <div class="myaccountcontent">
+
+      <%%= render 'form' %>
+
+         </div>
+    </p>
+  </div>
+  
+<%%= link_to 'Show', @<%= singular_table_name %> %> |
+<%%= link_to 'Back', <%= index_helper %>_path %>
+   
+
+</div>
+

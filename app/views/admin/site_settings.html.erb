@@ -1,0 +1,96 @@
+<div class="myaccountblock" Align="Left">
+  <%   $user =  User.find_by_id(session[:user_id])
+  $roles = $user.roles
+%>
+
+  <div id="flash" align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+  <div class="myaccountheader">Site Preferences</div>
+     <div class="myaccountsection">
+    <div class="myaccountheading">System Wide Settings</div>
+    <div class="myaccountcontent">
+      <p>
+        <b>Products per Page (Number):</b><br>
+        <%=editablefieldcreate("products_per_page", @settings)%>
+      </p>
+      <p>
+      </p>
+    </div>
+  </div>
+  
+     <div class="myaccountsection">
+    <div class="myaccountheading">UPS - Shipping Settings</div>
+    <div class="myaccountcontent">
+      <p> 
+        </br>
+        
+      </p>
+      <p>
+        <b>Account Number:</b><br>
+        <%=editablefieldcreate("ups_account", @settings)%>
+      </p>
+      <p>
+        <b>User ID:</b><br>
+        <%=editablefieldcreate("ups_login", @settings)%>
+      </p>
+      <p>
+        <b>Password:</b><br>
+        <%=editablefieldcreate("ups_password", @settings)%>
+      </p>
+       <p>
+        <b>Access Key:</b><br>
+        <%=editablefieldcreate("ups_access_key", @settings)%>
+      </p>
+      
+      <p>
+      </p>
+    </div>
+  </div>
+  
+    <div class="myaccountsection">
+    <div class="myaccountheading">Inventory Notification</div>
+    <div class="myaccountcontent">
+       <p>
+        <b>Email Address for Notification</b><br>
+        <%=editablefieldcreate("inventory_email", @settings)%>
+      </p>
+    </div>
+    </div>
+  
+  <div class="myaccountsection">
+    <div class="myaccountheading">Site Status</div>
+    <div class="myaccountcontent">
+      </br>
+      
+      <%#=link_to("reload!", {:action=>:reload_rails_env}, {})%>
+      
+      <p>
+        <b> It's <%= Time.now %> </b>
+      </p>
+      <div id="site-status">
+        <%=  site_status(site_down()) %>
+      </div>
+      <p>
+      <%=link_to 'Turn Site '+ (site_down() ? "ON" : "OFF"), {:controller => 'admin', :action => 'toggle_index'}, :id=>"site-button", :remote=>true%>
+      </p>
+      </br>
+      <p>
+        <b> Click this link to reprocess images:</b></br>
+      <%=link_to 'Reproces product images', {:controller => 'admin', :action => 'reprocess_product_images'}, :id=>"process-image-button", :remote=>true%>
+      </p>
+      
+      
+      </br></br>
+    </div>
+  </div>
+
+
+
+
+
+</div>

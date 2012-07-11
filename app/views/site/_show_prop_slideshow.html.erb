@@ -1,0 +1,9 @@
+<div id="slideshow" class="pics" style="position: relative; overflow-x: hidden; overflow-y: hidden;">
+  <%  for property in @properties do %>
+      <div class="slide" style="position: absolute; top: 0px; left: 0px; opacity: 1; display: block; z-index: 4;">
+        <%= image_tag property.photo_url {}, :border=>"0", :width=>"200", :height=>"200",  :style=>"position: absolute; top: 0px; opacity: 1; width: 200px; height: 200px;" %></br>
+        <div class="prop-info"><%=  property.municipality%>, <%=  property.price%></div>
+      </div>
+
+    <% end %>
+</div>

@@ -1,0 +1,57 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="site-pref-list">
+    <h1  class="myaccountheader">Order item</h1>
+
+    <center><%= link_to 'New Order item', :action=>:create_empty_record,:typeofrecord=>"order_item" %></center>
+
+    <%  @order_items.each do |order_item| %>
+      <div class="hr"></div>
+      <table width ="100%"cellpadding="5" cellspacing="0">
+        <tr class="list-table" valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>"  onclick = "window.location.href ='<%=url_for(:controller => 'order_items', :id => order_item.id,  :action => 'edit')%>' "  style = "cursor:pointer" >
+                      <td align="left">
+    <span class="list-title"><%= order_item.order_id %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.product_id %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.price %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.quantity %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.discount %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.size %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.color %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.shipped %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= order_item.shipped_date %></span>
+          </td>
+          
+        </tr>
+      </table>
+      <div align="right" class="image-delete-list" >
+        <%=link_to image_tag ("Button-Delete.png", :border=>"0") , order_item,:on_click=>"", :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <% end %>
+    <div class="hr"></div>
+
+  </div>
+    <center><%= link_to 'New Order item', :action=>:create_empty_record,:typeofrecord=>"order_item" %></center>
+</div>

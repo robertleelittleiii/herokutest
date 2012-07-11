@@ -1,0 +1,34 @@
+<div id="cart_content">
+  <div class="cart-title" >Your Cart</div>
+<div class="cart-items">
+<table>
+  <%= render(:partial => "cart_item.html" , :collection => cart.items) %>
+  <%if cart.items.size==0 then %>
+  <tr><td colspan="5"> The Cart is Empty</td></tr>
+  <%else%>
+  <tr class="total-line" >
+    <td colspan="2" ></td>
+    <td>Shipping</td>
+    <td><%=number_to_currency(cart.calc_shipping)%></td>
+  </tr>
+  <tr class="total-line" >
+    <td colspan="2" ></td>
+    <td>Total</td>
+    <td class="total-cell" ><%= number_to_currency(cart.total_price) %></td>
+  </tr>
+<%end%>
+</table>
+<table>
+<tr>
+  <td><%#=button_to_remote "Empty Cart" , :url=>{:action => :empty_cart, :controller=>:store} %></td>
+
+<td><%#=button_to "Checkout" , :action => :checkout, :controller=>:store %></td>
+
+ 
+
+</tr>
+</table>
+</div>
+</div>
+
+

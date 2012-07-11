@@ -1,0 +1,62 @@
+<div id="attr-pages" class="hidden-item">
+  <div id="full-screen">false</div>
+</div>
+
+<div id="product-list">
+  <% if @products.count > 0 then %>
+    <div class="pagination-div">  
+      <div class="product-counts">
+        Showing <%=@product_first%> to <%=@product_last%> of <%=@product_count%>
+      </div>
+      <%=paginate @products%>
+    </div>
+    <%  @products.each_with_index do |product, counter|  %>
+      <%  if(counter % 4) == 0 %>
+        <%  if counter  > 1 %>
+        </div>
+      <% end %>  
+      <div class="product-row">
+      <% end %>  
+
+
+      <div class="product-item">
+        <%=  product_edit_div(product)%>
+
+        <div id="item-id" class="hidden-item">
+          <%=product.id%>
+        </div>
+        <div class="product-picture">
+          <div class="product-float">
+            <%= image_tag(product.pictures[0].blank? ? "empty_s.jpg" : product.pictures[0].image_url(:store_list).to_s,:class=>"product-image") %>
+          </div>
+        </div>
+        <div class="product-name">
+          <%=link_to(product.product_name.html_safe, {:action=>:product_detail, :id=>product.id}, :class=>"product-detail-link") %>
+        </div>
+        <div class="product-price">
+          <%=number_to_currency(product.msrp) %>
+
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+  </div>
+
+  <div class="pagination-div">  
+    <div class="product-counts">
+      Showing <%=@product_first%> to <%=@product_last%> of <%=@product_count%>
+    </div>
+    <%=paginate @products%>
+  </div>
+<%else%>
+  </br>
+  </br>
+  </br>
+  <center>
+    NO PRODUCTS FOUND IN CATEGORY !
+  </center>
+<%end%>
+
+
+</div>

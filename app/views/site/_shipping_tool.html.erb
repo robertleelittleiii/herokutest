@@ -1,0 +1,4 @@
+<%= popup_page_link("Shipping Policy") %> </br> </br>
+<%#=@cart.inspect%>
+<%#=@shipping_methods.inspect%>
+Shipping Method (UPS): <%=ajax_select2("shipping_type","cart",@cart, @shipping_methods)  %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  page_id: 1
+  parent_id: 1
+  has_submenu: false
+  m_order: 1
+  m_type: MyString
+  rawhtml: MyString
+  url: MyString
+
+two:
+  name: MyString
+  page_id: 1
+  parent_id: 1
+  has_submenu: false
+  m_order: 1
+  m_type: MyString
+  rawhtml: MyString
+  url: MyString

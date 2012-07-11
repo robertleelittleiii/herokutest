@@ -1,0 +1,67 @@
+/* 
+    Document   : pages
+    Created on : Sep 18, 2011, 3:50:20 AM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+edit-pages 
+{
+
+
+}
+
+
+.draggable-slider-item {
+
+
+}
+.slider-drag:hover {
+    cursor: move;
+}
+
+.slider-drag {
+    background-color: grey;
+}
+
+#draggable_slider_item{
+
+
+}
+
+.slider-list-item {
+    display:block;
+}
+
+#sliders {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#slider-options {
+    border-width: 1px;
+    width: 90%;
+    border-style: dotted;
+    margin: auto;
+    padding:10px;
+    margin-top: -8px;
+    margin-bottom:25px;
+    display: block;
+    position: relative;
+
+}
+
+#add-slider{
+    margin-left:50px;
+    
+}
+

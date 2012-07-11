@@ -1,0 +1,15 @@
+
+<div id="file_<%= file.id%>" class="fileSingle">
+ 
+  <div id="logo-links" class="<%= File.extname(file.file_info_url).delete!(".")%>">
+    <%#= file_tag(file.file_url(:large).to_s) %>
+  </div>
+  <div class="hidden-item" id="full-file-path">
+    <%=file.file_info_url%>
+  </div>
+      <%=File.basename(file.file_info_url)%>  
+   <div class="fileDelete">
+   <%= link_to image_tag("interface/Button-Delete.png"), {:id=>file, :incoming_id=>params[:id], :action=>"delete_file", :format=>"js"}, :class=>"delete_file", :confirm => 'Are you sure?', :remote=>true %> 
+  </div>
+  
+</div>

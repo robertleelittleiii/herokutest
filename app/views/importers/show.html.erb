@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @importer.name %>
+</p>
+
+<p>
+  <b>Full file name:</b>
+  <%= @importer.full_file_name %>
+</p>
+
+<p>
+  <b>Columns:</b>
+  <%= @importer.columns %>
+</p>
+
+<p>
+  <b>Table name:</b>
+  <%= @importer.table_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_importer_path(@importer) %> |
+<%= link_to 'Back', importers_path %>

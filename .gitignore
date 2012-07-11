@@ -1,0 +1,11 @@
+/nbproject/private/
+/public/uploads/
+/public/system/
+/tmp/
+/app/.svn.old/
+Gemfile.lock
+/config/database.yml
+/log/
+/.bundle/
+/log/development.log
+/scrapi/

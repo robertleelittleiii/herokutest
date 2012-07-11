@@ -1,0 +1,47 @@
+/* 
+    Document   : landing_page.css
+    Created on : Mar 3, 2012, 5:34:40 PM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+#page {
+    width:100%;
+}
+
+.logo-container {
+width: 200px;
+background-color: black;
+position: absolute;
+-moz-box-shadow: 0px 0px 15px #000;
+-webkit-box-shadow: 0px 0px 15px #000;
+box-shadow: 0px 0px 15px #000;
+margin: -15px auto 0 auto;
+padding-bottom: 15px;
+padding-top:20px;
+display: block;
+position: relative;
+}
+
+body {
+	background-color: #000000;
+}
+.style4 {
+	color: white;
+	font-size: 24px;
+}
+
+.logo {
+    width:175px;
+    margin:auto;
+}

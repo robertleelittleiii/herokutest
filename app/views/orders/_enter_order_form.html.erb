@@ -1,0 +1,109 @@
+
+<% form_for :order, :url => { :controller=>:orders, :action => :enter_order } do |form| %>
+  <div class="shipping-address">
+    <div class="address-title">Shipping Address <div id="copy-to-billing"><%=link_to "Copy >> Billing" ,{},{:href=>"javascript:void();",:onclick=>"return false;", :class=>"button-link"}%></div></div>
+
+    <div>
+      <b>Name:</b> </br>
+      <%= form.text_field :ship_first_name , :size => 33 %>  <%= form.text_field :ship_last_name, :size => 32 %>
+    </div>
+
+
+    <div>
+      <b>Street:</b></br>
+      <%= form.text_field :ship_street_1, :rows => 1, :size => 72 %></br>
+      <%= form.text_field :ship_street_2, :rows => 1, :size => 72 %>
+    </div>
+
+
+    <div>
+      <div> 
+        <b>City:</b></br>
+        <%= form.text_field :ship_city , :size => 37 %>
+      </div>
+      <div>
+        <b>State:</b></br> 
+        <%= form.select :ship_state, Order::CC_STATES, :prompt => "Select State"  %> 
+      </div>
+      <div>
+        <b>Zip Code:</b></br> 
+        <%= form.text_field :ship_zip , :size => 6 %>
+      </div>
+    </div>
+
+  </div>    
+
+
+  <div class="billing-address">
+    <div class="address-title">Billing Address</div>
+
+    <div>
+      <b>Name:</b> </br>
+      <%= form.text_field :bill_first_name , :size => 33 %>  <%= form.text_field :bill_last_name, :size => 32 %>
+    </div>
+
+
+    <div>
+      <b>Street:</b></br>
+      <%= form.text_field :bill_street_1, :rows => 1, :size=> 72 %></br>
+      <%= form.text_field :bill_street_2, :rows => 1, :size=> 72 %>
+    </div>
+
+
+  <div>
+      <div> 
+        <b>City:</b></br>
+        <%= form.text_field :bill_city , :size => 37 %>
+      </div>
+      <div>
+        <b>State:</b></br> 
+        <%= form.select :bill_state, Order::CC_STATES, :prompt => "Select State"  %> 
+      </div>
+      <div>
+        <b>Zip Code:</b></br> 
+        <%= form.text_field :bill_zip , :size => 6 %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="credit-card-info">
+    <div class="credit-card-title">Credit Card Info</div>
+
+    <div>
+      <b><%= form.label :credit_card_type, "Pay with:" %></b> <br>
+      <%= form.select :credit_card_type, Order::CC_TYPES, :prompt => "Select Credit Card Type"  %>
+
+    </div>
+    <div>
+      <b>Credit Card Number</b><br />
+      <%= form.text_field :cc_number %>
+    </div>
+    <div>
+      <b>Card Verification Value (CVV):</b> </br>
+      <%= image_tag "site/cvv2.gif" %>  <%= image_tag "site/cvv2_amex.gif" %> <%= form.text_field :cc_verification  , :size => 6%>
+    </div>
+    <div>
+      <b>Expiration Date:</b><br />
+      <%= form.date_select :cc_expires, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true %>
+    </div>
+  </div>
+
+
+  <div class="nav-cart-bottom"> 
+    <div class="nav-cart-left">
+      <%=link_to "<< Back to Cart" ,request.env['HTTP_REFERER'], {:class=>"navigation-link"} %>
+      <%=link_to "Empty Cart" ,{:action => :empty_cart, :controller=>:site}, {:class=>"navigation-link"} %>
+    </div>
+
+    <div class="nav-cart-right">
+      <%= submit_tag "Place Order", {:class => "navigation-link"} %>
+
+  <%#=link_to "Continue to Confirmation >>" ,{:action => :enter_order, :controller=>:orders}, {:class=>"navigation-link"} %>
+    </div>
+
+  </div>
+
+
+  </div>
+<%end %>

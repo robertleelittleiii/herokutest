@@ -1,0 +1,13 @@
+development:
+  session_key: '_sherigetsthewordout_session'
+  secret: 'c5c5ed044074749e94232861f9ab818c34f512554ff0ada3a78984693160c1506169b1b402c2a965e50a649b70c6b96d7658670166d2ad5edfbd4cce63535460'
+
+test:
+  session_key: '_sherigetsthewordout_session'
+  secret: 'c5c5ed044074749e94232861f9ab818c34f512554ff0ada3a78984693160c1506169b1b402c2a965e50a649b70c6b96d7658670166d2ad5edfbd4cce63535460'
+
+production:
+  session_key: '_sherigetsthewordout_session'
+  secret: 'c5c5ed044074749e94232861f9ab818c34f512554ff0ada3a78984693160c1506169b1b402c2a965e50a649b70c6b96d7658670166d2ad5edfbd4cce63535460'
+
+ 

@@ -1,0 +1,37 @@
+<div class="myaccountblock" Align="Left">
+    <div align="center">
+    <!-- START:flash -->
+    <% if notice -%>
+      <div id="notice"><%= notice  %></div>
+    <% end -%>
+    <!-- END:flash -->
+    
+   <% if @order_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order_item.errors.count, "error") %> prohibited this order_item from being saved:</h2>
+
+      <ul>
+      <% @order_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  </div>
+
+  <div class="myaccountheader">New Order item</div>
+  <div class="myaccountsection">
+    <div class="myaccountheading">Information for order_item</div>
+    <div class="myaccountcontent">
+
+      <%= render 'form' %>
+
+         </div>
+    </p>
+  </div>
+  
+<%= link_to 'Show', @order_item %> |
+<%= link_to 'Back', order_items_path %>
+   
+
+</div>

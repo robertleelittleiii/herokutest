@@ -1,0 +1,99 @@
+/* 
+    Document   : files
+    Created on : Sep 23, 2011, 12:23:18 AM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.file-block
+{
+    position:relative; 
+
+}
+
+.fileSingle {
+    position:relative;
+    margin:20px;
+    text-align:center;
+    display:inline-block;
+    float:left;
+
+    // display:inline;
+} 
+.filesection {
+
+}
+#filebutton{
+    display:inline-block;
+    margin:20px;
+    text-align:center;
+}
+#files{
+    display:inline-block;
+    margin-left: 20px;
+}
+.fileThumb{
+    background:#E1BF48 none repeat scroll 0 0;
+}
+
+.fileDelete{
+    margin-left: -15px;
+    margin-top: -20px;
+    float: left;
+    padding-right: 10px;
+
+}
+
+.file-delete-list{
+    margin-right:5px;
+    margin-top: -25px;
+}
+
+#logo-link
+{
+    width:40px;
+    height:50px;
+    background-image:url(/images/interface/icons.png);
+    display:inline-block;
+}
+
+#logo-linkm
+{
+    width:40px;
+    height:50px;
+    background-image:url(/images/interface/icons.png);
+    display:inline-block;
+}
+
+#logo-links
+{
+    width:20px;
+    height:24px;
+    background-image:url(/images/interface/icons.png);
+    display:inline-block;
+    background-position:405px 100px; 
+}
+
+#logo-link.general  { background-position:14px 14px; }
+
+#logo-link.doc, #logo-link.docx  { background-position:380px 528px; }
+#logo-link.xls, #logo-link.xlsx { background-position:300px 528px; }
+#logo-link.ppt, #logo-link.pptx { background-position:220px 528px; }
+
+#logo-link.pdf  { background-position:300px 450px; }
+
+#logo-links.doc, #logo-links.docx  { background-position:255px 100px; }
+#logo-links.xls, #logo-links.xlsx { background-position:205px 100px; }
+#logo-links.ppt, #logo-links.pptx { background-position:155px 100px; }
+
+#logo-links.pdf  { background-position:405px 50px; }
+

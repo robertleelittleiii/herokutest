@@ -1,0 +1,4 @@
+#!/bin/bash
+./bin/redis-server ./bin/redis.conf > ./log/redis-server.log &
+
+

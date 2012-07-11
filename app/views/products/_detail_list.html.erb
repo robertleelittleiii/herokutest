@@ -1,0 +1,40 @@
+
+<table cellpadding="0" cellspacing="0" border="0" class="display" id="product-detail-list-table">
+  <thead>
+    <tr>
+      <th>Avlbl</th>
+      <th>Inventory Key</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th>In Stock</th>
+      <th>On Order</th>
+      <th>-</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%  @product.product_details.each do |details| %>
+      <tr class="<%= cycle('odd gradeA', 'even gradeA')%> details-row"  style = "cursor:pointer">
+        <td> <%=editablecheckboxedit ("sku_active", details,"")%></td>
+        <td> <%=editablefieldcreate("inventory_key", details)%><div id="scope-id" class="hidden-item"><%details.id%></div></td>
+        <td> <%=editablefieldcreate("size", details)%></td>
+        <td> <%=editablefieldcreate("color", details)%></td>
+        <td> <%=editablefieldcreate("units_in_stock", details)%></td>
+        <td> <%=editablefieldcreate("units_on_order", details)%></td>
+        <td width="50" > 
+          <%=link_to image_tag('interface/delete.png', :border=>"0"),{ :action=>:destroy, :controller=>:product_details, :id=>details.id},{  :on_click=>" $j('#loader_progress').show();", 'confirm' => 'Are you sure?', 'method' => :delete , :id=>"delete-product_detail", :title=>"Delete Item", :remote=>true} %>
+          <%=link_to image_tag('interface/browse.png', :border=>"0"),{ :action=>:duplicate_record, :controller=>:product_details, :old_id=>details.id},{  :on_click=>" $j('#loader_progress').show();", 'confirm' => 'Duplicate?',  :id=>"duplicate-product_detail",:title=>"Duplicate Item", :remote=>true} %>
+        </td></tr>
+    <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <th>Avlbl</th>
+      <th>Inventory Key</th>
+      <th>Size</th>
+      <th>Color</th>
+      <th>In Stock</th>
+      <th>On Order</th>
+      <th>-</th>
+    </tr>
+  </tfoot>
+</table>

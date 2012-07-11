@@ -1,0 +1,66 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="site-pref-list">
+    <h1  class="myaccountheader">Supplier</h1>
+
+    <center><%= link_to 'New Supplier', :action=>:create_empty_record,:typeofrecord=>"supplier" %></center>
+
+    <%  @suppliers.each do |supplier| %>
+      <div class="hr"></div>
+      <table width ="100%"cellpadding="5" cellspacing="0">
+        <tr class="list-table" valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>"  onclick = "window.location.href ='<%=url_for(:controller => 'suppliers', :id => supplier.id,  :action => 'edit')%>' "  style = "cursor:pointer" >
+                      <td align="left">
+    <span class="list-title"><%= supplier.supplier_name %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.contact_name %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.address_1 %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.address_2 %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.city %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.state %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.zip_code %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.country %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.phone_number %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.fax_number %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.email_address %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= supplier.web_site %></span>
+          </td>
+          
+        </tr>
+      </table>
+      <div align="right" class="image-delete-list" >
+        <%=link_to image_tag ("Button-Delete.png", :border=>"0") , supplier,:on_click=>"", :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <% end %>
+    <div class="hr"></div>
+
+  </div>
+    <center><%= link_to 'New Supplier', :action=>:create_empty_record,:typeofrecord=>"supplier" %></center>
+</div>

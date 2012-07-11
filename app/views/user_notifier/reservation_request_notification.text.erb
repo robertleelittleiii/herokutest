@@ -1,0 +1,20 @@
+Dear <%=(@user.user_attribute.first_name.titleize + " " + @user.user_attribute.last_name.titleize) rescue @user.name%>,
+
+Your treasure: <%=@product.name%> has been requested for pickup at your earliest convenience.
+
+There <%=@product.reservations.count > 1 ? "are" : "is"%> <%=pluralize(@product.reservations.count,"person") %> interested in taking this item.
+
+Here is the contact information of the person that has made the latest request:
+     Name: <%=(@to_user.user_attribute.first_name.titleize% + @user.user_attribute.last_name.titleize) rescue ""%>,
+     Email: <%=@to_user.name%>
+     Phone: <%=@to_user.user_attribute.phone_number%>
+     
+Please update the system as soon as you have confirmed pickup of this item.  
+
+You can see all the people that have made requests by clicking on this url:
+
+<%=url_for :controller=>:products, :id=>@product.id, :action=>:show, :host=>@host %>
+
+There you can change the status to "taken" if you wish.
+
+Thanks for using BillabongNJ.com

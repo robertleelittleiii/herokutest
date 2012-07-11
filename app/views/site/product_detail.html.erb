@@ -1,0 +1,121 @@
+  <%=product_edit_div(@product) %>
+
+<div id="product-block">
+  <div id="product-header">
+
+  </div>
+  <div id="product-id" class="hidden-item">
+    <%=@product.id%>
+  </div>
+  
+  <div id="product-body">
+    <div id="product-main-image">
+
+      <%=link_to(image_tag(@product.pictures[0].blank? ? "empty.jpg" : @product.pictures[0].image_url(:view).to_s),image_path(@product.pictures[0].blank? ? "empty.jpg" : @product.pictures[0].image_url.to_s),:class=>"product-picture",:rel=>"gal1", :title=>@product.product_name) %>
+
+<%#= image_tag(@product.pictures[0].blank? ? "empty.jpg" : @product.pictures[0].image_url(:view).to_s) %>
+
+      <div id="product-thumbs">
+      <% @product.pictures.each_with_index do | picture, index| %>
+
+        <a class="product-thumb-item <%= index==0 ? "zoomThumbActive" : "" %>" href="javascript:void(0);" rel="{gallery: 'gal1', smallimage: '<%=image_path(picture.blank? ? "empty.jpg" : picture.image_url(:view).to_s)%>',largeimage: '<%=image_path(picture.blank? ? "empty.jpg" : picture.image_url.to_s)%>'}">
+          <%= image_tag(picture.blank? ? "empty.jpg" : picture.image_url(:small).to_s, :class=>"product-thumb")%>
+        </a>
+      <% end %>
+    </div>
+    </div>
+    <div id="product-info-block">
+      <div id="supplier-product-id">
+        ID# <%= @product.supplier_product_id %></br>
+      </div>
+
+      <div id="distributor-info">
+        <%= @product.sheet_name %>
+      </div>
+      <div id="product-info">
+
+        <div id="product-name">
+          <%= @product.product_name.html_safe %></br>
+        </div>
+        <div id="product-price">
+          <%=number_to_currency(@product.msrp) %>
+        </div>
+
+        <div id="product-description">
+          <%= @product.product_description.to_s.html_safe %></br>
+
+        </div>
+        
+        
+        <fieldset class="product-legend" >
+
+    <legend class="project-legend-name"">Please Select Style Information</legend>
+        <div id="product-colors">
+          Colors:</br>
+          <% @product_colors.each_with_index do |color, index| %>
+            <div class="color-swatch-item">
+              <div id="color-name" class="hidden-item"><%=color.color%></div>
+              <%=image_tag(color.swatch.blank? ? "empty.jpg" : color.swatch, :class=>((index==0 ? "swatch-selected ": "") + "product-swatch"), :width=>"40")%> </br>
+              <%=color.color %>
+            </div>
+          <% end %>
+        </div>
+        <div id="product-size">
+          Sizes: <%=link_to "(size chart)", {}, {} %></br>
+          <div id="product-size-items">
+            <%=render :partial => "sizes_list.html"%>
+          </div>
+        </div>
+        <div id="product-cart">
+          <div id="product-selected-color" class="hidden-item">
+            <%=@product_colors[0].color rescue ""%>
+          </div>
+
+          <div id="product-selected-size"  class="hidden-item">
+            <%=@product_sizes.select {|item| item.units_in_stock > 0}.first.size rescue ""
+          #@product_sizes[0].size rescue ""
+          #a.select {|v| v =~ /[aeiou]/}
+          %>
+
+          </div>
+          <div id="add-to-cart-div">
+          <div id="card-form">
+            Quantity:</br>
+            <%=text_field("quantity", {},{:value=>"1", :id=>"quantity", :style=>"width: 20px"})%>            
+            
+            
+          </div>
+          <div id="total-cost">
+            Total:</br>
+            <div id="total-cost-dollars"><%=number_to_currency(@product.msrp)%></div>
+          </div>
+            <div id="add-to-cart-section">
+              <%=link_to ("Add To Cart", "",{:onclick=>"return false;", :class=>"button-link",  :id=>"add_to_cart"})%>
+            </div>
+          </div>
+
+        </div>
+         </fieldset>
+        <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_default_style ">
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+      <a class="addthis_button_tweet"></a>
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+      <a class="addthis_button_compact"></a>
+      <a class="addthis_counter addthis_bubble_style"></a>
+    </div>
+    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4fb0f8a71346d23c"></script>
+    <!-- AddThis Button END -->
+
+      </div>
+    </div>
+  </div>
+
+  <div id="product-footer">
+
+
+
+  </div>
+
+
+</div>

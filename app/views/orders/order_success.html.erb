@@ -1,0 +1,81 @@
+
+<%=page_attr_display(@page, "true") %>
+
+<div class="myaccountblock" Align="Left">
+  <div class="cart-title" >Order Complete</div>
+
+  <div align="center">
+    <!-- START:flash -->
+    <% if notice -%>
+      <div id="notice"><%= notice  %></div>
+    <% end -%>
+    <!-- END:flash -->
+
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+        <ul>
+          <% @order.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  </div>
+<table width="1000" border="0" cellspacing="0" cellpadding="0">
+  <tr class="cart-header">
+    <td width="30" align="center"></td>
+
+    <td width="850">Invoice</td>
+
+    <td>Tools</td>
+    <td></td>
+
+  </tr>
+  <tr >
+
+    <td colspan="5"><hr></td>
+  </tr>
+</table>
+  
+
+  <div class="myaccountblock">
+
+            <%= link_to "Zoom Invoice","#", {:href=>"javascript:void();",:onclick=>"return false;", :id=>"zoom-invoice", :class=>"navigation-link"}%>
+
+    <div id="invoice-frame">
+
+    <%=render "invoice_report.html" %>
+      
+  </div>
+    
+    <div id="invoice-tools">
+      <div id="invoice-tools-title"> Thank you <br> for your Order!! </div>
+      <div id="invoice-tools-body">
+      If you want to get a PDF version of your invoice for your records please click on the PDF icon below:</br>
+      <center><%= link_to image_tag("site/pdf.png",{:width=>"60px"}), {:action=>:invoice_slip, :format=>"pdf", :id=>@order.id},{} %></center>
+      </br>
+      You can check the statu of your order anytime by logging in to our site and clicking on the "Orders" tab or if you wish to go there now then</br></br>
+      <center><%= link_to "Click Here", {:controller=>:orders, :action=>:user_orders}, {:class=>"navigation-link"}%></center>
+      </div>
+    </div>
+  </div>
+  
+  <hr>
+    <%=page_edit_div(@page)%>
+    <%=display_html(@page.body) rescue ("Page '#{@page_title}' not found in system.")%>
+
+  <div class="nav-cart-bottom"> 
+    <div class="nav-cart-left">
+      <%=link_to "<< Back to Shopping" ,session[:last_catetory], {:class=>"navigation-link"} %>
+    </div>
+
+    <div class="nav-cart-right">
+      <%= link_to "Complete!",{:controller=>:site, :action=>:index} ,{:class => "navigation-link"} %>
+
+  <%#=link_to "Continue to Confirmation >>" ,{:action => :enter_order, :controller=>:orders}, {:class=>"navigation-link"} %>
+    </div>
+
+  </div>

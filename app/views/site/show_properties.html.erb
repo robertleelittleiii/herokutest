@@ -1,0 +1,43 @@
+<h1><%=@properties.size%> properties found in search.</h1>
+  </br>
+  <hr>
+  <%  for property in @properties do %>
+    <table width="800">
+      <tbody>
+        <tr>
+          <td rowspan="5" width="205"><%= image_tag property.photo_url {}, :style=>"width: 200px;" %></td> 
+          <td align="right" width="150"><b>Location:</b></td>
+          <td width="200"><%=property.municipality%></td>
+          <td width="200" align="right"><b><%=property.title%></b></td>
+          <td width="100"></td>
+        </tr>
+        <tr>
+          <%=  show_title_not_null("Full Bathroom:",property.fullbaths, "") %>
+          <%=  show_title_not_null("Half Bathroom:",property.halfbaths, "") %>
+        </tr>
+        <tr>
+          <%=  show_title_not_null("Lot Size(acres):",property.acreage, "") %>
+          <%=  show_title_not_null("Square Feet:",property.squarefeet, "") %>
+
+        </tr>
+        <tr>
+           <%=  show_title_not_null("Year Built:",property.yearbuilt, "") %>
+          <td></td>
+          <td></td>    
+        </tr>
+        <tr>
+            <%=  show_title_not_null("Exterior:",property.exterior, 'colspan="3"') %>
+          
+        </tr>
+        <tr>
+          <td colspan="4" align="left"> <%=property.description %>  </td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <hr>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  <%end%>
+

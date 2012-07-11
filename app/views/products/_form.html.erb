@@ -1,0 +1,272 @@
+
+<div class="hidden-item" id="product-id"><%= @product.id %></div>
+
+<div id="product-info-div">
+
+  <fieldset class="product-legend" >
+
+    <legend class="address-lable">Product Information:</legend>
+
+
+    <table  class="address-table">
+      <tr>
+        <td>
+          <%=editablecheckboxedit("product_active", @product, "Available?")%>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Product Name: <%=editablefieldcreate("product_name", @product)%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Product Description:<br>
+          
+           <% form_for(@product, :remote=>true) do |f| %>
+  <%#= f.submit "Update"%><br>
+
+        <center>
+          <%= f.text_area :product_description, :class => "mceEditor"%>
+        </center>
+        <br>
+      <% end %>
+        
+          <%#=editablefieldcreate("product_description", @product)%>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+</div>
+
+<div class="clear"></div>
+
+<div id="product-vendor-info">
+  <fieldset class="address-legend" >
+    <legend class="address-lable">Tracking</legend>
+    <table  class="address-table">
+      <tbody>
+        <tr>
+          <td>
+            ID: </br> <%=editablefieldcreate("product_id", @product)%>
+          </td>
+          <td>
+            Supplier Product ID:</br> <%=editablefieldcreate("supplier_product_id", @product)%>
+          </td>
+          <td>
+            Supplier Name:</br>  <%=editablefieldcreate("sheet_name", @product)%>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Quantity Per Unit:</br><%=editablefieldcreate("quantity_per_unit", @product)%></td>
+          <td>Unit Size:</br> <%=editablefieldcreate("unit_size", @product)%></td>
+          <td><%=editablecheckboxedit("is_taxable", @product, "Sales Tax Applies?")%></td>
+        </tr>
+        <tr>
+          <td>
+            Reorder Level: <%=editablefieldcreate("reorder_level", @product)%>
+          </td>
+          <td>
+          </td>
+
+          <td>
+            Ranking:   <%=editablefieldcreate("product_ranking", @product)%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</div>
+
+
+
+<div id="product-pricing">
+  <fieldset class="address-legend" >
+    <legend class="address-lable">Pricing</legend>
+    <table  class="address-table">
+      <tbody>
+        <tr>
+          <td>
+            Unit Pricing: </br>   <%=editablefieldcreate("unit_price", @product)%>
+          </td>
+          <td>
+            MSRP: </br> <%=editablefieldcreate("msrp", @product)%>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            Discount: </br> <%=editablecheckboxedit("discount_available", @product, "Available?")%> <%=editablefieldcreate("discount", @product)%>   
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</div>
+
+
+<div id="product-classification">
+  <fieldset class="address-legend" >
+    <legend class="address-lable">Classification</legend>
+    <table  class="address-table">
+      <tbody>
+        <tr>
+          <td>
+
+            Department: </br>
+            <%#=ajax_select2("department_id","product",@product, create_menu_list("Top Menu"))%>            
+            <%=create_group_checks_live("department_id", @product, create_menu_list("Top Menu",false),"department",{:class=>"department-check"} )%>
+
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Category: </br>             
+            <div id="category-div">
+              <%=render(:partial=>"category_div")%>  
+            </div>
+          
+
+<%#=create_group_checks_live("category_id", @product, create_menu_list("Top Menu"),"category" )%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</div>
+
+
+<%#*<p>%>
+<%#*<b>product_id:</b><br>%>
+<%#=editablefieldcreate("product_id", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>sku:</b><br>%>
+<%#=editablefieldcreate("sku", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>supplier_product_id:</b><br>%>
+<%#=editablefieldcreate("supplier_product_id", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>product_name:</b><br>%>
+<%#=editablefieldcreate("product_name", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>product_description:</b><br>%>
+<%#=editablefieldcreate("product_description", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>supplier_id:</b><br>%>
+<%#=editablefieldcreate("supplier_id", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>department_id:</b><br>%>
+<%#=editablefieldcreate("department_id", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>category_id:</b><br>%>
+<%#=editablefieldcreate("category_id", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>quantity_per_unit:</b><br>%>
+<%#=editablefieldcreate("quantity_per_unit", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>unit_size:</b><br>%>
+<%#=editablefieldcreate("unit_size", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>unit_price:</b><br>%>
+<%#=editablefieldcreate("unit_price", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>msrp:</b><br>%>
+<%#=editablefieldcreate("msrp", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>product_detail_id:</b><br>%>
+<%#=editablefieldcreate("product_detail_id", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>discount:</b><br>%>
+<%#=editablefieldcreate("discount", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>unit_weight:</b><br>%>
+<%#=editablefieldcreate("unit_weight", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>reorder_level:</b><br>%>
+<%#=editablefieldcreate("reorder_level", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>product_active:</b><br>%>
+<%#=editablefieldcreate("product_active", @product)%>
+
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>discount_available:</b><br>%>
+<%#=editablefieldcreate("discount_available", @product)%>
+<%#*</p>%>
+
+
+
+<%#*<p>%>
+<%#*<b>product_ranking:</b><br>%>
+<%#=editablefieldcreate("product_ranking", @product)%>
+<%#*</p>%>
+
+

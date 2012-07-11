@@ -1,0 +1,15 @@
+<% for each in @importer.importer_items do %>
+<div class="importer-item">
+<%#=ajax_select2("to_column","importer_item",each, @table_columns)%>
+<%#=ajax_select2("from_column","importer_item",each, @hashed_name_row)%>
+  <div class="line-editable"><%=each.from_column_name%> ----> <%=each.to_table_name.to_s + ":" + each.to_column_name%>  </div>
+ <%#=editablefieldcreate("from_column_name", each)%> 
+  <%#*<div class="line-editable">---></div>%> 
+<%#=editablefieldcreate("to_column_name", each)%>
+  <div class="import-item-delete">
+   <%= link_to image_tag("interface/Button-Delete.png"), {:id=>each.id, :incoming_id=>params[:id], :action=>"delete_import_item", :format=>"js"}, :class=>"delete_import_item", :confirm => 'Are you sure?', :remote=>true %> 
+  </div>
+  
+  </br>
+</div>
+<% end %>

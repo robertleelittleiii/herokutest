@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Billabongnj.com</title>
+<%@host=@hostfull[7..@hostfull.length-1]%>
+
+<%#@hostfull=getHTMLsitePreference('siteURL')
+@host=@hostfull[6..@hostfull.length-2]%>
+
+<% ActionController::Base.asset_host = @hostfull%>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <%= stylesheet_link_tag 'index' %>
+
+  </head>
+
+  <body bgcolor="#FFF">
+    <table style="background-color:white;">
+      <tr >
+        <td  >
+  <%=  link_to image_tag(attachments['billabong-logo-nj-wide-100.png'].url, :host=>@host,:border=>"0"), url_for(:host=>@host,:controller=>'store',:action=>'store_list', :page=> '1')%>
+        </td>
+      </tr>
+      <tr>
+        <td id="content_c_content" colspan="3">
+
+          Dear <%=@user%>,
+          <br><br>
+          The following product's inventory has fallen below the watch value: <br><br>
+
+          <div>
+            <h3>Product:</h3>
+            <%= image_tag(@hostfull + @product_detail.thumb.to_s,:border=>"0")%></br>
+            <%=h @product_detail.product.product_name%></br>
+            <%=h truncate(@product_detail.product.product_description, :length=>100)%></br>
+            
+            Current Inventory: <%= @product_detail.units_in_stock %></br>
+
+          </div>
+
+          <%= link_to 'View Product Detail',{:host=>@host,:action=>:edit, :controller=>:products , :id=>@product_detail.product.id}, {}%><br><br>
+
+          <br><br>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+<% ActionController::Base.asset_host = ""%>

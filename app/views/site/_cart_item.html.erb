@@ -1,0 +1,18 @@
+
+<% if @cart_item == @current_item %>
+  <tr id="current_item">
+<% else %>
+  <tr>
+<% end %>
+  <td><%= image_tag(cart_item.product_detail.thumb.to_s,:border=>"0")%></td>
+  <td><%= cart_item.quantity %>&times;</td>
+  <td><%=h cart_item.product.product_name%><br>
+    <span id="cart-item-iid"><%=h truncate(cart_item.product.product_description, :length=>15)%><br></span></td>
+  <td class="item-price"><%= number_to_currency(cart_item.price) %></td>
+  <td>
+<%=link_to(image_tag("interface/add.png", :border => 0),{:action=>'increment_cart_item', :current_item=>cart_item_counter},{:remote=>true})%><br>
+<%=link_to(image_tag("interface/minus.png", :border => 0),{:action=>'decrement_cart_item', :current_item=>cart_item_counter }, {:remote=>true})%><br>
+<%=link_to(image_tag("interface/delete.png", :border => 0),{:action=>'delete_cart_item', :current_item=>cart_item_counter }, {:remote=>true})%>
+  </td>
+</tr>
+<tr><td colspan="5"><hr></td></tr>

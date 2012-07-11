@@ -1,0 +1,11 @@
+<%#=ajax_select2("category_id","product",@product, create_menu_lowest_child_list("",@product.department_id))%>  
+<% @product.department_list.each do |department| %>
+  <fieldset class="department">
+    <legend><%=department%></legend>
+
+    <%=create_group_checks_live("category_id", @product, create_menu_lowest_child_list(department,nil,false),"category" )%>
+
+  </fieldset>
+<% end %>
+<%#=create_group_checks_live("category_id", @product, create_menu_list("Top Menu"),"category" )%>
+

@@ -1,0 +1,110 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @product.product_id %>
+</p>
+
+<p>
+  <b>Sku:</b>
+  <%= @product.sku %>
+</p>
+
+<p>
+  <b>Supplier product:</b>
+  <%= @product.supplier_product_id %>
+</p>
+
+<p>
+  <b>Product name:</b>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <b>Product description:</b>
+  <%= @product.product_description %>
+</p>
+
+<p>
+  <b>Supplier:</b>
+  <%= @product.supplier_id %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%= @product.department_id %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @product.category_id %>
+</p>
+
+<p>
+  <b>Quantity per unit:</b>
+  <%= @product.quantity_per_unit %>
+</p>
+
+<p>
+  <b>Unit size:</b>
+  <%= @product.unit_size %>
+</p>
+
+<p>
+  <b>Unit price:</b>
+  <%= @product.unit_price %>
+</p>
+
+<p>
+  <b>Msrp:</b>
+  <%= @product.msrp %>
+</p>
+
+<p>
+  <b>Product detail:</b>
+  <%= @product.product_detail_id %>
+</p>
+
+<p>
+  <b>Discount:</b>
+  <%= @product.discount %>
+</p>
+
+<p>
+  <b>Unit weight:</b>
+  <%= @product.unit_weight %>
+</p>
+
+<p>
+  <b>Units in stock:</b>
+  <%= @product.units_in_stock %>
+</p>
+
+<p>
+  <b>Units on order:</b>
+  <%= @product.units_on_order %>
+</p>
+
+<p>
+  <b>Reorder level:</b>
+  <%= @product.reorder_level %>
+</p>
+
+<p>
+  <b>Product active:</b>
+  <%= @product.product_active %>
+</p>
+
+<p>
+  <b>Discount available:</b>
+  <%= @product.discount_available %>
+</p>
+
+<p>
+  <b>Product ranking:</b>
+  <%= @product.product_ranking %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

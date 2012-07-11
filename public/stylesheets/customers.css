@@ -1,0 +1,131 @@
+/* 
+    Document   : customers
+    Created on : Aug 23, 2011, 12:55:05 AM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+.address-table td{
+    background-color: white;
+    border-color:black;
+    border-style:dotted;
+    border-width:.5px;
+
+    overflow: hidden;
+    height:30px;
+
+    font-weight: bold;
+    color:gray;
+
+}
+.address-table tr{
+    height:20px;
+
+}
+
+.address-table{
+    width:100%;
+    margin-top:-15px;
+
+}
+.address-legend {
+    background: #cefad1;
+    width:285px;
+    padding:15px;
+
+
+    background-color: #cefad1;
+}
+
+
+.address-lable {
+    background: transparent;
+    border-width: 1px;
+    border-style: none;
+    border-color: grey;
+    padding: 2px;
+    margin: 2px;
+    font-weight: bold;
+    font-size: 16px;  
+    color:#004194;
+
+}
+
+
+.contact-table td{
+    background-color: white;
+    border-color:black;
+    border-style:dotted;
+    border-width:.5px;
+
+    overflow: hidden;
+    height:30px;
+
+    font-weight: bold;
+    color:gray;
+
+}
+.contact-table tr{
+    height:20px;
+
+}
+
+.contact-table{
+    width:100%;
+    margin-top:-15px;
+
+}
+.contact-legend {
+    background: #cefad1;
+    padding:15px;
+
+
+    background-color: #cefad1;
+}
+
+
+.contact-lable {
+    background: transparent;
+    border-width: 1px;
+    border-style: none;
+    border-color: grey;
+    padding: 2px;
+    margin: 2px;
+    font-weight: bold;
+    font-size: 16px;  
+    color:#004194;
+
+}
+
+.myaccountcontent {
+    display: inline-block;
+    width:693px;
+}
+#shipping-address{
+    float:left;
+    margin:10px;
+}
+
+#billing-address {
+    float:left;
+    margin:10px;
+}
+
+#contact-person {
+    float:left;
+    width:666px;
+    padding:10px
+}
+
+td div div.best_in_place {
+    padding: 0px;
+    margin-left: -20px;
+    font-weight: normal;
+    color:black;
+}

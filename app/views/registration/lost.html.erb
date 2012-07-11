@@ -1,0 +1,29 @@
+<div align="center" class="depot-form">
+<%#= error_messages_for :user %>
+
+<!-- START:flash -->
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      <!-- END:flash -->
+
+<% form_for :user do |f| -%>
+<table id="newedit">
+    <thead>
+        <tr>
+            <th CLASS="registrationheader" colspan="2" >Resend activation code</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="right"><label>Email:</label></td>
+            <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><%= image_submit_tag ("SubmitButton.gif",:alt=>"Submit", :border=>"0" ) %></td>
+        </tr>
+    </tbody>
+</table>
+<% end -%>
+</div>

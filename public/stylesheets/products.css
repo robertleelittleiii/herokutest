@@ -1,0 +1,179 @@
+/* 
+    Document   : products
+    Created on : Aug 17, 2011, 12:33:20 AM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+ @import "tables.css"; 
+
+ .product-row:hover {
+cursor: pointer;
+ }
+ 
+ .imageSingle {
+display: inline-block;
+text-align: center;
+border: 1px dotted grey;
+padding: 5px;
+margin: 5px;
+border-image: initial;
+}
+
+.myaccountcontentitem {
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 29px;
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 12pt;
+    font-weight: normal;
+}
+
+.imageName .myaccountcontentitem {
+    padding-left: 0px !important;
+
+    
+}
+
+#imagebutton {
+display: inline-block;
+margin: 20px;
+}
+
+#imagebutton {
+display: inline-block;
+margin: 20px;
+}
+
+input#image.file:hover {
+    cursor:pointer;
+}
+
+
+#modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+#modal {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    left: 25%;
+    margin-left: (-600px - 40px) / 2;
+    padding: 20px;
+    padding-bottom: 50px;
+    background: #fff;
+    border: 5px solid #eee;
+    border-color: green;
+    border-width: 4px;
+    border-style: solid;
+    & > .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #666;
+    &:hover, &:active {
+        color: #000;
+}
+}
+}
+td .myaccountcontentitem {
+
+    margin-bottom:6px;
+}
+
+
+.address-lable {
+    background: transparent;
+    border-width: 1px;
+    border-style: none;
+    border-color: grey;
+    padding: 2px;
+    margin: 2px;
+    font-weight: bold;
+    font-size: 16px;  
+    color:#004194;
+
+}
+
+.product-legend {
+    background: #CEFAD1;
+    width: 943px;
+    padding: 15px;
+    margin: 10px;
+    background-color: #CEFAD1;
+}
+
+
+
+.address-table td{
+    background-color: white;
+    border-color:black;
+    border-style:dotted;
+    border-width:.5px;
+
+    overflow: hidden;
+    height:30px;
+
+    font-weight: bold;
+    color:gray;
+
+}
+.address-table tr{
+    height:20px;
+
+}
+
+.address-table{
+    width:100%;
+    margin-top:-15px;
+
+}
+.address-legend {
+    background: #CEFAD1;
+    padding: 15px;
+    background-color: #CEFAD1;
+    margin: 10px;
+}
+
+
+
+
+
+.div-category {
+    display: inline-block;
+    border: 1px lightgray dotted;
+    padding: 3px;
+    margin: 4px;
+    border-image: initial;
+}
+
+.div-department {
+    display: inline-block;
+    border: 1px lightgray dotted;
+    padding: 3px;
+    margin: 4px;
+    border-image: initial;
+}
+
+
+fieldset.department {
+margin: 5px 10px 5px 10px;
+}
+
+#product-inventory {
+display: inline-block;
+margin-bottom: 20px;
+}

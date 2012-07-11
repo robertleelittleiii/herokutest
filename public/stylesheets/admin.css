@@ -1,0 +1,24 @@
+/* 
+    Document   : admin
+    Created on : Dec 21, 2011, 10:58:08 PM
+    Author     : rlittle
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+#site-status {
+    margin-left: 35px;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#site-button {
+    margin-left:50px;
+    margin-bottom:50px;
+    
+}

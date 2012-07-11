@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> 
+    <link rel="icon" href="/favicon.ico" type="image/x-icon"> 
+    <title>Billabong New Jersey: <%=get_page_title%></title>
+
+    <%= controller_stylesheet_link_tag %>
+    <%= stylesheet_link_tag "pro_drop_1.css" %>
+    <%= stylesheet_link_tag "billabong.css"   %>
+
+    <%= csrf_meta_tag %>
+    <%= javascript_include_tag 'jquery.js', 'jquery-ui.js','jquery_ujs.js', 'jquery.dataTables.js', 'jquery.purr.js',
+    'jquery.caret.js',  'jquery.cookie.js','jquery.cycle.js', 'slides.jquery.js', 'jquery.jqzoom-core.js', 'jquery.blockUI.js',
+    'jquery.timers.js' %>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <script type="text/javascript">
+      // this allows jquery to be called along with scriptaculous and YUI without any conflicts
+      // the only difference is all jquery functions should be called with $j instead of $
+      // e.g. $j('#div_id').stuff instead of $('#div_id').stuff
+      var $j = jQuery.noConflict();
+    </script>
+    <%= javascript_include_tag 'best_in_place'%>
+
+    <%= javascript_include_tag "prototype.js", "effects.js", "dragdrop.js", "controls.js", "widgets/tooltip.js"%>
+
+    <%= controller_javascript_include_tag  %>
+
+    <%= javascript_include_tiny_mce_if_used %>
+    <%= tiny_mce if using_tiny_mce? %>
+
+    <%= javascript_include_tag "application.js"%>
+    <%= javascript_include_tag "stylizefilebutton.js"%>
+
+
+    <link rel="stylesheet" href="/stylesheets/index.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <style type="text/css" title="text/css">
+
+      .solidhex-stylized div.file {
+        background: url('/images/interface/browse.png') no-repeat 0 0;
+        width: 16px;
+        height: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .solidhex-stylized div.file input {
+        opacity: 0;
+        -moz-opacity: 0;
+        filter:alpha(opacity=0);
+        height: 100%;
+        width: auto;
+        display: block;
+        cursor: pointer;
+        position: relative;
+      }
+    </style>
+
+
+
+  </head>
+  <%find_cart()%>
+  <body>
+    <div id="page">
+      <div id="page-content">
+        <div id="page-top">
+          <div id="page-top-gutter"></div>
+          <div id="page-top-logo">
+            <%= link_to image_tag("site/billabong-logo-nj-wide-100.png",:border=>"0"), :controller=>:site, :action=>:index %> 
+          </div>
+          <div id="page-top-left">
+            <div id="top-nav-bar">
+
+              <div id="top-admin-nav">
+                <div id="live-search">
+                  &nbsp;|&nbsp;
+                  <%= image_tag("site/search.png", :border=>"0")%>  
+                  <%= text_field("live-search", :search, :size=>"20")  %>
+                </div>
+
+                <div id="shopping-cart">
+                  <div id="shopping-cart-image">
+                    <%= link_to image_tag("site/cart.png",:border=>"0"), {:controller=>:site, :action=>:check_out}, {}%>
+                  </div> 
+                  <div id="shopping-cart-info">
+                    <%=render :partial=>"/site/shopping_cart_info.html" %> 
+                  </div>
+                </div>
+                <div id="admin-nav">
+
+                  <% if session[:user_id] then %>
+                    <%= link_to 'Sign Out',{ :controller => :admin, :action =>'logout'},:class=>"sites-system-link" %> &nbsp;|&nbsp;
+                    <%= link_to 'My Account',{ :controller => :admin, :action =>'index'},:class=>"sites-system-link" %> 
+                  <% else %>
+                    <%= link_to 'Sign In', {:controller=>'registration', :action=>'login'},:class=>"sites-system-link" %>
+
+  <%#= link_to 'Sign In', {:controller=>'admin'},:class=>"sites-system-link" %> 
+                    <%  end %>
+                    &nbsp;|&nbsp;
+
+                </div>
+
+              </div>
+              <div id="top-menu-bar"> 
+                <ul id="top-menu">
+
+                  <%=buildhorizontalmenu :current_page=>get_page_name,:menu_id=>"Top Menu", :prehtml=>"<li class=''>",:posthtml=>"</li>", :class=>"", :breaker=>"", :selected_class=>"<li class='top-nav-selected'>"%>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="page-middle">
+          <div id="page-middle-left">
+            <div id="section-name">
+              <%=get_page_name%>
+            </div>
+            <ul id="left-nav">
+              <%= buildverticlesubmenu(:prehtml=>"<li class='top-nav'>", :posthtml=>"</li>",  :selected_class=>"<li class='top-nav left-nav-selected'>",:article_name=>get_page_name) %>
+            </ul>
+          </div>
+          <div id="content">
+            <div id="div-admin-menu">
+              <%=hidden_div_if((not session[:user_id] or not session[:mainnav_status]), :id=>"mainnav") %>
+              <%= tabnav :main %>
+              <%="</div>".html_safe%>
+            </div>
+
+            <%=  yield %>
+
+          </div>
+<%#*<div id="page-middle-right">%>
+
+<%#*</div>%>
+        </div>
+        <div id="page-bottom" style="clear:both;">
+          <div id="copyrite-info">
+            &copy;  2011,2012 Billabong NJ Inc. </br>
+          </div>
+
+          <div id="bottom-menu">
+            <%=buildhorizontalmenu :menu_id=>"Bottom Menu", :class=>"sites-system-link", :breaker=>""%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

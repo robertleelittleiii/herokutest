@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @product_detail.product_id %>
+</p>
+
+<p>
+  <b>Inventory key:</b>
+  <%= @product_detail.inventory_key %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @product_detail.size %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @product_detail.color %>
+</p>
+
+<p>
+  <b>Inventory:</b>
+  <%= @product_detail.inventory %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_detail_path(@product_detail) %> |
+<%= link_to 'Back', product_details_path %>

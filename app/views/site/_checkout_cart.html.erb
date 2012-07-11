@@ -1,0 +1,41 @@
+<div class="cart-title" >Your Shopping Cart</div>
+<table width="1000" border="0" cellspacing="0" cellpadding="0">
+  <tr class="cart-header">
+    <td width="30" align="center"></td>
+
+    <td width="850">Description</td>
+
+    <td>Sub Total</td>
+    <td></td>
+
+  </tr>
+  <tr >
+
+    <td colspan="5"><hr></td>
+  </tr>
+</table>
+  <div id="cart-contents">
+  <%= render(:partial => "checkout_cart_item" , :collection => checkout_cart.items) %>
+  </div>
+
+
+<div class="cart-summary-section">
+  <div class="cart-shipping">
+    <div class="cart-shipping-header cart-header-font ">
+      Shipping
+    </div>
+    <div class="cart-shipping-body">
+        <%= render :partial=>"shipping_tool.html", :locals=>{:checkout_cart=>@checkout_cart, :shipping_methods=>@shipping_methods} %>
+    </div> 
+  </div>
+
+  <div class="cart-summary">
+    <div class="cart-summary-header cart-header-font "> 
+      Summary
+    </div>
+    <div class="cart-summary-body"> 
+    <%@checkout_cart = checkout_cart %>
+      <%= render :partial=>"cart_summary_body.html" , :locals=>{:checkout_cart=>@checkout_cart} %>
+  </div>
+
+</div>

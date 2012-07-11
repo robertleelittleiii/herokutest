@@ -1,0 +1,42 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="site-pref-list">
+    <h1  class="myaccountheader">Importer</h1>
+
+    <center><%= link_to 'New Importer', :action=>:create_empty_record,:typeofrecord=>"importer" %></center>
+
+    <%  @importers.each do |importer| %>
+      <div class="hr"></div>
+      <table width ="100%"cellpadding="5" cellspacing="0">
+        <tr class="list-table" valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>"  onclick = "window.location.href ='<%=url_for(:controller => 'importers', :id => importer.id,  :action => 'edit')%>' "  style = "cursor:pointer" >
+                      <td align="left">
+    <span class="list-title"><%= importer.name %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= importer.full_file_name %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= importer.columns %></span>
+          </td>
+                   <td align="left">
+    <span class="list-title"><%= importer.table_name %></span>
+          </td>
+          
+        </tr>
+      </table>
+      <div align="right" class="image-delete-list" >
+        <%=link_to image_tag ("Button-Delete.png", :border=>"0") , importer,:on_click=>"", :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+    <% end %>
+    <div class="hr"></div>
+
+  </div>
+    <center><%= link_to 'New Importer', :action=>:create_empty_record,:typeofrecord=>"importer" %></center>
+</div>

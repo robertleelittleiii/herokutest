@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Billabongnj.com</title>
+<%@host=@hostfull[7..@hostfull.length-1]%>
+
+<%#@hostfull=getHTMLsitePreference('siteURL')
+@host=@hostfull[6..@hostfull.length-2]%>
+
+<% ActionController::Base.asset_host = @hostfull%>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<%= stylesheet_link_tag 'index' %>
+
+</head>
+
+<body bgcolor="#F9FBD6">
+  <table style="background-color:white;">
+  <tr >
+    <td  >
+  <%=  link_to image_tag(attachments['billabong-logo-nj-wide-100.png'].url, :host=>@host,:border=>"0"), url_for(:host=>@host,:controller=>'store',:action=>'store_list', :page=> '1')%>
+  </td>
+
+  <td>
+<%#=getHTMLsitePreference('logo2')%>
+  </td>
+  <td id="top-message">
+    <p align="center" style="font-family: 'Times New Roman', Times, serif;
+    height: 138px;
+    width: 330px;
+    float: left;
+    visibility: visible;
+    position: relative;
+    font-weight: bold;
+    color: #CC0000;
+    font-size: 14px;
+    line-height: 17px;
+    font-variant: normal;
+    background-color:#F9FBD6;">
+    <%#=getHTMLsitePreference('Message').gsub!(/(<[^>]*>)|\n|\t/s) {""}%>
+    </p>
+  </td>
+  </tr>
+  <tr>
+<td id="content_c_content" colspan="3">
+          
+          Dear <%=@user.full_name%>,
+          <br><br>
+           Thank you for registering with our site, to activate your account please click here:<br><br>
+
+<%= link_to 'Activate Account',@hostfull+"/activate/" + @user.activation_code%><br><br>
+
+             <br><br>
+
+          Thank you,<br><br>
+
+          BillabongNJ.com<br><br>
+        
+
+        </td>
+      </tr>
+  </table>
+</body>
+</html>
+<% ActionController::Base.asset_host = ""%>

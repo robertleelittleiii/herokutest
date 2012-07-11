@@ -1,0 +1,152 @@
+<table width="850" border="0" cellpadding="5" cellspacing="5">
+
+  <tbody>
+    <tr>
+      <td>
+        <%= image_tag "site/billabong-logo-nj-wide-100.png", {:width=>"225", :height=>"50"}%></br>
+        Billabong New Jersey</br>
+        512 Broad St, Shrewsbury, NJ 07702</br>
+        (732)219-9600</br>
+        FAX: 732.219.9612</br>
+        </br>
+      </td>
+      <td align="right">
+        <h1> I N V O I C E </h1>
+      </td>
+
+    </tr>
+    <tr >
+      <td colspan="2">
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td align="right"><b>Invoice Date:</b></td><td><%= @order.created_at %></td>
+              <td align="right"><b>Print Date:</b></td><td><%= DateTime.now %></td>
+            </tr>
+            <tr>
+              <td align="right"><b>Order No:</b></td><td><%= @order.id.to_s.rjust(10, '0') %></td>
+              <td align="right"><b>Contact:</b></td><td><%= @order.full_shipping_name %></td>        
+            </tr>
+            <tr>
+              <td align="right"><b>Invoice No:</b></td><td><%= @order.id.to_s.rjust(5, '0').to_s + "-"+ @order.created_at.to_i.to_s %></td>
+              <td align="right"><b>Account No:</b></td><td><%= @user.id.to_s.rjust(10,'0') %></td>             
+            </tr>
+            <tr>
+              <td align="right"><b></b></td><td><%#= @order.invoice_no.rjust(10,'0') rescue "n/a"%></td>
+              <td align="right"><b>Purchase Order No:</b></td><td><%= @order.purchase_order_no.rjust(10,'0') rescue "n/a"%></td>             
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top" border="1">
+        <table border="1" width="400"><tr><td>
+              <b> Bill To:</b></br>
+              <%= @order.full_billing_name %></br>
+              <%= @order.full_billing_street %></br>
+              <%= @order.bill_city %>, <%= @order.bill_state %> <%= @order.bill_zip %></br>
+              </br>
+              Email: <%= @user.name %></br>
+            </td></tr></table>
+      </td>
+      <td valign="top">
+        <table border="1" width="400"><tr><td>
+              <b> Ship To:</b></br>
+              <%= @order.full_shipping_name %></br>
+              <%= @order.full_shipping_street %></br>
+              <%= @order.ship_city %>, <%= @order.ship_state %> <%= @order.ship_zip %></br>
+              </br>
+              </br>
+              Via: <%=@shipping.shipped_via rescue "n/a" %>  #(<%=@shipping.tracking_no rescue "n/a"%>)</br> 
+            </td></tr></table>
+      </td> 
+
+    </tr>
+    <tr>
+      <td colspan="2">
+        <table cellpadding="2" cellspacing="0" border="1" width="100%">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Product Description</th>
+              <th>Code</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%  @order.order_items.each do |order_item| %>
+
+
+              <tr class="<%= cycle('odd gradeA', 'even gradeA')%> shipping-item-row"  style = "cursor:pointer">
+                <td align="center"><%= image_tag(order_item.product_detail.thumb.to_s,:border=>"0")%></td>
+                <td align="left"><%=order_item.title%> - <%=order_item.description%></td>
+                <td align="center"><%=order_item.product_detail.inventory_key%></td>
+                <td align="center"><%=order_item.quantity%></td>
+                <td align="center"><%=number_to_currency(order_item.price)%></td>
+              </tr>
+            <% end %>
+
+          </tbody>
+          <tfoot>
+            <tr>
+              <th></th>
+              <th>Product Description</th>
+              <th>Code</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+            <tr>
+              <th colspan="4" align="right">
+                Sub Total:
+              </th>
+              <th>
+                <%=number_to_currency(@order.total_price)%>
+              </th>
+             </tr>
+              <th colspan="4" align="right">
+                Shipping:
+              </th>
+              <th>
+                <%=number_to_currency(@order.shipping_cost)%>
+              </th>
+            <tr>
+              <th colspan="4" align="right">
+                Sales Tax:
+              </th>
+              <th>
+                <%=number_to_currency(@order.sales_tax)%>
+              </th> 
+            </tr>
+            <tr>
+              <th colspan="4" align="right">
+                Grand Total:
+              </th>
+              <th>
+                <%=number_to_currency(@order.grand_total_price)%>
+              </th>
+            </tr>
+          </tfoot>
+        </table>
+
+
+
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <h2> Comments: Backordered items will ship as they become available.</h2>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan="2" align="center">
+        <h3>Please contact the Customer Service department at the number above with any questions or concerns.</h3>
+
+        <h2>Thank you for your order!</h2>
+      </td>
+    </tr>
+  </tbody>
+
+</table>

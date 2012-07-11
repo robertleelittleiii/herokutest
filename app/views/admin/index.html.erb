@@ -1,0 +1,78 @@
+<div class="myaccountblock" Align="Left">
+<%   $user =  User.find_by_id(session[:user_id])
+     $roles = $user.roles
+ %>
+
+ <div id="flash" align="center">
+  <!-- START:flash -->
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      <!-- END:flash -->
+</div>
+ <div class="myaccountheader">My Account Information</div>
+ <div class="myaccountsection">
+   <div class="myaccountheading">About Me</div>
+      <div class="myaccountcontent">
+
+        <%  if @user.not_activated? %>
+        <p>
+          <b>Account has not been activated.</b><br>
+            <%= link_to "Resend Activate Code" , :controller =>'registration', :action=>'lostwithemail',  :name=>@user.name %>
+        </p>
+         <%else%>
+        <%end%>
+
+
+        <p>
+        <b>First Name:</b><br>
+        <%=editablefieldcreate("first_name", @user_attributes)%>
+        </p>
+
+         <p>
+        <b>Last Name:</b><br>
+        <%=editablefieldcreate("last_name", @user_attributes)%>
+        </p>
+        
+        <p>
+        <b>Email Address:</b><br>
+        <%=editablefieldcreate("name", @user)%>
+        </p>
+
+        <p>
+        <b>Nick Name:</b><br>
+        <%=editablefieldcreate("handle", @user_attributes)%>
+        </p>
+        
+        <p>
+        <b>Passsword:</b><br>
+        <%=editablefieldcreate2("password", @user)%>
+        </p>
+
+         <%#*<p>%>
+          <%#*<b>Birthday:</b><br>%>
+            <%#=ajax_calendar_date_select ("birthdate",@user_attributes)%>
+        <%#*</p>%>
+
+      </div>
+ </div>
+<div class="myaccountsection">
+   <div class="myaccountheading">My Account</div>
+   <div class="myaccountcontent">
+It's <%= Time.now %>
+
+<br>
+You are an
+<%for role in $roles do %>
+                <%=role.name %>,
+<%  end %>
+<br>
+
+   </div>
+ </div>
+
+
+
+
+
+</div>

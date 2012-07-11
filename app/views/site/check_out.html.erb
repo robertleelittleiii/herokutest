@@ -1,0 +1,28 @@
+<%=page_attr_display(@page, "true") %>
+<div class="myaccountblock">
+
+      <center>
+        <%= render(:partial => "checkout_cart", :object => @cart) %>
+      </center>
+                 
+  
+
+
+
+  <%#= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif", :border=>"0"), express_checkout_new_order_path %>
+
+  <%#= link_to image_tag("buynow.jpg"), @cart.standard_checkout(url_for(:controller=>:store, :action=>:store_list, :only_path=>false), url_for(:controller=>:orders, :action=>:new , :only_path=>false)) %>
+
+      <div class="nav-cart-bottom"> 
+        <div class="nav-cart-left">
+          <%=link_to "<< Back to Shopping" ,session[:last_catetory], {:class=>"navigation-link"} %>
+          <%=link_to "Empty Cart" ,{:action => :empty_cart, :controller=>:site}, {:class=>"navigation-link"} %>
+        </div>
+
+        <div class="nav-cart-right">
+          <%=link_to "Continue to Checkout >>" ,{:action => :enter_order, :controller=>:orders}, {:class=>"navigation-link"} %>
+        </div>
+
+      </div>
+
+</div>

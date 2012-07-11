@@ -1,0 +1,37 @@
+<table width="1000" border="0" cellspacing="0" cellpadding="0">
+<tr>
+  <td style="text-align: center; text-align: center; width: 87px; padding-right: 30px; ">
+    <%= link_to(image_tag(checkout_cart_item.product_detail.small.to_s,:border=>"0", :align=>"center"), {:action=>:product_detail, :id=>checkout_cart_item.product.id},{})%></br>
+    <div class="cart-item-size-color">(<%=h checkout_cart_item.color%>, <%=h checkout_cart_item.size %>)</div>
+
+  </td>
+  <td><table>
+      <tr>
+        <td class="cart-item-title"><%=link_to h(checkout_cart_item.product.product_name), {:action=>:product_detail, :id=>checkout_cart_item.product.id},{}%></td>
+      </tr><tr>
+        <td width="766" class="cart-item-description"><%=h truncate(checkout_cart_item.product.product_description, :length=>250) %></td>
+      </tr>
+    </table>
+  </td>
+  <td> 
+    <%@checkout_cart_item = checkout_cart_item %>
+    <div class="shopping-cart-item-info">
+      <%= render :partial=>"shopping_cart_item_info.html" , :locals=>{:checkout_cart_item=>@checkout_cart_item} %>
+    </div>
+  </td>
+  <td>
+    <div id="cart-item-index" class="hidden-item"><%=checkout_cart_item_counter%></div>
+    <%=link_to(image_tag("interface/add.png", :border => 0, :title=>"Increase Quantity"),{:action=>'increment_cart_item', :current_item=>checkout_cart_item_counter},{:class=>"add-product", :remote=>true})%></br>
+    <%=link_to(image_tag("interface/minus.png", :border => 0 , :title=>"Decrease Quantity"),{:action=>'decrement_cart_item', :current_item=>checkout_cart_item_counter }, {:class=>"minus-product",:remote=>true})%></br>
+    <%=link_to(image_tag("interface/delete.png", :border => 0, :title=>"Delete Item"),{:action=>'delete_cart_item', :current_item=>checkout_cart_item_counter }, {:confirm => "Are you sure?", :class=>"remove-product", :remote=>true})%>
+
+  </td>
+
+
+</tr>
+<tr>
+  <td colspan="5"><hr>
+  </td>
+</tr>
+</table>
+

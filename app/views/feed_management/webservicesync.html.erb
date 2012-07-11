@@ -1,0 +1,43 @@
+
+<div class="myaccountblock" Align="Left">
+  <div class="myaccountheader">Import Data</div>
+  <div class="myaccountsection">
+    <div class="myaccountheading">Importer</div>
+    <div class="myaccountcontent">
+      <div id="importer-info">
+        <p>
+          <b>Select Importer:</b>
+        <div id="set-up-importer">
+          <%=  render :partial=>"set_up_importer"%>
+        </div>   <div id="set-up-importer-button"> <%=button_to( "New", {:action=>:create_empty_record, :importer_type=>"web-service"}, :remote=>true, :id=>"new-importer")%>
+        </div>
+        
+        <hr>
+         <div id="importer-name-div">
+           
+         </div>
+        
+        <div id="web-service-info-div">
+        </div>
+     
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="myaccountsection">
+
+    <div class="myaccountheading">Action</div>
+    <div class="myaccountcontent" id="import-action-div">
+      <div id="import-action">
+  
+      </div>
+    </div>
+       
+  </div>
+
+
+  <p><%= link_to 'Back', request.env['HTTP_REFERER'] %>
+  </p>
+
+
+</div>

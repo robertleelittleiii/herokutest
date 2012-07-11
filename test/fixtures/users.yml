@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  hashed_password: MyString
+  salt: MyString
+  remember_token: MyString
+  remember_token_expires_at: 2011-04-02 21:48:28
+  activation_code: MyString
+  activated_at: 2011-04-02 21:48:28
+  state: MyString
+  deleted_at: 2011-04-02 21:48:28
+  password_reset_code: MyString
+
+two:
+  name: MyString
+  hashed_password: MyString
+  salt: MyString
+  remember_token: MyString
+  remember_token_expires_at: 2011-04-02 21:48:28
+  activation_code: MyString
+  activated_at: 2011-04-02 21:48:28
+  state: MyString
+  deleted_at: 2011-04-02 21:48:28
+  password_reset_code: MyString

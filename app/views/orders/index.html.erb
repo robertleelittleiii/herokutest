@@ -1,0 +1,57 @@
+<div class="myaccountblock">
+  <div align="center">
+    <!-- START:flash -->
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+    <!-- END:flash -->
+  </div>
+
+  <div id="site-pref-list">
+    <h1  class="myaccountheader">Order</h1>
+
+    <center><%#= link_to 'New Order', :action=>:create_empty_record,:typeofrecord=>"order" %></center>
+      <table width ="100%"cellpadding="5" cellspacing="0">
+        <tr>
+          <th width="30%">
+            Order No.
+          </th>
+          <th width="30%">
+            Order Date
+          </th>
+          <th width="30%">
+            Ship Date
+          </th>
+          <th width="10%">--</th>
+        </tr>
+      </table>
+      <hr>
+      
+    <%  @orders.each do |order| %>
+      <div class="hr"></div>
+      <table width ="100%"cellpadding="5" cellspacing="0">
+        <tr class="list-table" valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>"  onclick = "window.location.href ='<%=url_for(:controller => 'orders', :id => order.id,  :action => 'order_success')%>' "  style = "cursor:pointer" >
+                      <td align="left"  width="30%">
+    <span class="list-title"><%=  order.id.to_s.rjust(10, '0')%></span>
+          </td>
+                   <td align="left" width="30%">
+    <span class="list-title"><%= order.created_at.strftime('%m/%d/%Y') rescue "n/a" %></span>
+          </td>
+                   <td align="left" width="30%">
+    <span class="list-title"><%= order.shipped_date.strftime('%m/%d/%Y') rescue "n/a" %></span>
+          </td>
+                   <td align="left" width="10%">
+    <span class="list-title"><%= link_to image_tag("site/pdf.png",{:width=>"20px"}), {:action=>:invoice_slip, :format=>"pdf", :id=>order.id},{} %></span>
+          </td>
+          
+        </tr>
+      </table>
+      <%#*<div align="right" class="image-delete-list" >%>
+        <%#=link_to image_tag ("interface/Button-Delete.png", :border=>"0") , order,:on_click=>"", :confirm => 'Are you sure?', :method => :delete %>
+      <%#*</div>%>
+    <% end %>
+    <div class="hr"></div>
+
+  </div>
+    <center><%#= link_to 'New Order', :action=>:create_empty_record,:typeofrecord=>"order" %></center>
+</div>

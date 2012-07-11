@@ -1,0 +1,12 @@
+   <%=image_tag "/images/interface/ajax-loader2.gif", :id=>"loader_progress" ,:style=>"display:none"%>
+   <%=form_tag({:action=> "add_file", :id=>params[:id], :format=>"js"},:id=>"upload-form", :class=>"upload-form", :multipart => true, :target=>'upload_frame', :remote => true ) do%>
+      <div class="file">
+        <%= file_field_tag "file",   :class => 'file' %>
+      </div>
+    <%end%>
+
+<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
+
+<%#*<script type="text/javascript" language="javascript">%>
+<%#*SI.Files.stylizeAll();%>
+<%#*</script>%>

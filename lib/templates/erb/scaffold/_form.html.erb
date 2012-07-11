@@ -1,0 +1,11 @@
+
+<% attributes.each do |attribute| -%>
+
+      <p>
+        <b><%= attribute.name %>:</b><br>
+        <%%=editablefieldcreate("<%= attribute.name %>", @<%= singular_table_name %>)%>
+      </p>
+
+
+<% end -%>
+      

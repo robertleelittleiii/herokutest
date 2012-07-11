@@ -1,0 +1,12 @@
+      <div class="cart-sumamry-row">
+        <div class="cart-summary-title">Cart Total</div> <div class="cart-summary-price" id="cart-shipping-price"  ><%=number_to_currency(@checkout_cart.total_price) %></div>
+      </div>
+      <div class="cart-sumamry-row">
+        <div class="cart-summary-title">Sales Tax</div>  <div class="cart-summary-price" id="cart-tax-price" ><%=number_to_currency(@checkout_cart.calc_tax) %></div>
+      </div>
+      <div class="cart-sumamry-row">
+        <div class="cart-summary-title">Shipping</div> <div class="cart-summary-price" id="cart-shipping-price"  ><%=number_to_currency(@checkout_cart.calc_shipping[@checkout_cart.shipping_type]) %></div>
+      </div>
+      <div class="cart-sumamry-row">
+        <div class="cart-summary-title">Sumary Total</div> <div class="cart-summary-price" id="cart-summary-price" ><%=number_to_currency(@checkout_cart.grand_total_price) %></div>
+      </div>

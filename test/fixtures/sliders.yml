@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  page_id: 1
+  slider_order: 1
+  slider_name: MyString
+  slider_active: false
+  slider_type: 1
+  slider_content: MyText
+
+two:
+  page_id: 1
+  slider_order: 1
+  slider_name: MyString
+  slider_active: false
+  slider_type: 1
+  slider_content: MyText

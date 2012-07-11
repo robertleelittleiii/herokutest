@@ -1,0 +1,44 @@
+<div class="depot-form">
+
+<!-- START:flash -->
+      <% if flash[:notice] -%>
+        <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      <!-- END:flash -->
+
+
+
+
+
+
+ <fieldset>
+  <legend>Enter User Details</legend>
+
+<% form_tag :action => 'registration' do %>
+  <div>
+  <label for="name">Email Address:</label> <%= text_field 'user', 'name'  %><p>
+ </div>
+
+ <div>
+  <label for="user_password">Password:</label> <%= password_field 'user', 'password'  %><p>
+</div>
+
+<div>
+  <label for="user_password_confirmation">Confirm:</label> <%= password_field 'user', 'password_confirmation'  %><p>
+</div>
+
+ <div>
+<%=@role_name %>
+
+<% fields_for :register do |r| %>
+<%= r.hidden_field :role, :value=>@role_name%><br/>
+<%= r.hidden_field :regtype, :value=>action_name%><br/>
+
+<% end %>
+
+  <%# =hidden_field 'user','role', :value=>@role_name%>
+ </div>
+  <%= submit_tag "Register" %>
+
+</div>
+<% end %>
