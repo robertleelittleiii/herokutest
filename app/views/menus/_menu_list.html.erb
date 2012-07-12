@@ -1,6 +1,6 @@
 <div id="field_<%=menu_list.id.to_s%>">
   <div class="hr"></div>
-  <table width ="100%" cellpadding="5" cellspacing="0" border="0" class="<%= 'has-sub-menus' if (menu_list.menus.count > 0) %> " >
+  <table width ="100%" cellpadding="5" cellspacing="0" border="0" class="<%= 'has-sub-menus' if(menu_list.menus.count > 0) %> " >
     <tr class="list-table">
       <td width="10" <%= "class='menu-drag'" if menu_list.parent_id!=0%> >
       </td>

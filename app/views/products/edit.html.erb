@@ -38,7 +38,7 @@
     <div class="myaccountcontent">
       <div id="product-inventory">
         <div>
-          <%=image_tag "interface/ajax-loader2.gif", :id=>"loader_progress" ,:style=>"display:none"%> <%= link_to ('New Inventory',{ :action=>:create_empty_record, :controller=>:product_details, :typeofrecord=>"detail", :product_id=>@product.id, :request_type=>"nothing"}, :id=>"new-product-detail-item", :remote => true  )%>
+          <%=image_tag "interface/ajax-loader2.gif", :id=>"loader_progress" ,:style=>"display:none"%> <%= link_to('New Inventory',{ :action=>:create_empty_record, :controller=>:product_details, :typeofrecord=>"detail", :product_id=>@product.id, :request_type=>"nothing"}, :id=>"new-product-detail-item", :remote => true  )%>
         </div>
 
         <div id="product-detail-list">

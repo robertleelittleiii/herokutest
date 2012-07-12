@@ -15,7 +15,7 @@
     <div class="myaccountheading">System Wide Settings</div>
     <div class="myaccountcontent">
       <p>
-        <b>Products per Page (Number):</b><br>
+        <b>Products per Page(Number):</b><br>
         <%=editablefieldcreate("products_per_page", @settings)%>
       </p>
       <p>
@@ -76,7 +76,7 @@
         <%=  site_status(site_down()) %>
       </div>
       <p>
-      <%=link_to 'Turn Site '+ (site_down() ? "ON" : "OFF"), {:controller => 'admin', :action => 'toggle_index'}, :id=>"site-button", :remote=>true%>
+      <%=link_to 'Turn Site '+(site_down() ? "ON" : "OFF"), {:controller => 'admin', :action => 'toggle_index'}, :id=>"site-button", :remote=>true%>
       </p>
       </br>
       <p>

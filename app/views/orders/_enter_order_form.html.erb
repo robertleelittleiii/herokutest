@@ -80,12 +80,12 @@
       <%= form.text_field :cc_number %>
     </div>
     <div>
-      <b>Card Verification Value (CVV):</b> </br>
+      <b>Card Verification Value(CVV):</b> </br>
       <%= image_tag "site/cvv2.gif" %>  <%= image_tag "site/cvv2_amex.gif" %> <%= form.text_field :cc_verification  , :size => 6%>
     </div>
     <div>
       <b>Expiration Date:</b><br />
-      <%= form.date_select :cc_expires, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true %>
+      <%= form.date_select :cc_expires, :discard_day => true, :start_year => Date.today.year, :end_year =>(Date.today.year+10), :add_month_numbers => true %>
     </div>
   </div>
 

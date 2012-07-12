@@ -14,7 +14,7 @@
   <tbody>
     <%  @product.product_details.each do |details| %>
       <tr class="<%= cycle('odd gradeA', 'even gradeA')%> details-row"  style = "cursor:pointer">
-        <td> <%=editablecheckboxedit ("sku_active", details,"")%></td>
+        <td> <%=editablecheckboxedit("sku_active", details,"")%></td>
         <td> <%=editablefieldcreate("inventory_key", details)%><div id="scope-id" class="hidden-item"><%details.id%></div></td>
         <td> <%=editablefieldcreate("size", details)%></td>
         <td> <%=editablefieldcreate("color", details)%></td>

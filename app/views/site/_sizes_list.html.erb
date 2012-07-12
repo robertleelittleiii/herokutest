@@ -8,7 +8,7 @@
   end rescue size_selected=false
 %>
 
-  <div class="<%=(size_selected ? 'size-selected ': '')+ (size.units_in_stock.to_i> 0 ? "product-size-item" : "product-size-inactive") rescue ""%>">
+  <div class="<%=(size_selected ? 'size-selected ': '')+(size.units_in_stock.to_i> 0 ? "product-size-item" : "product-size-inactive") rescue ""%>">
     <%=size[:size]%>
   </div>
 <% end %>

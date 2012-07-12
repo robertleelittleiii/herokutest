@@ -1,15 +1,15 @@
 <%='<'+'%'%>  
 # this partial renders a tabnav, you can call it in your views with:
-#   <%='<'+'%='%> tabnav :<%=name%> % > (just the tabnav) 
+#   <%='<'+'%='%> tabnav :<%=name%> % >(just the tabnav) 
 # or, if you want a boxed tabnav:
 #   <%% tabnav :<%=name%> do % >
 #     your html here
 #   <%% end % >
-# (remove the space between % and >, we don't want to mess up your brand new tabnav :-))
+#(remove the space between % and >, we don't want to mess up your brand new tabnav :-))
 #
 # you can pass render_tabnav a few options:
 #   :generate_css => true|false #=> generates a default inline css for the tabnav, defaults to false
-#   :html => aHash #=> sets html options for the tabnav's div (es :html => {:class=> 'myCssClass', :id=>'myCssId'}) 
+#   :html => aHash #=> sets html options for the tabnav's div(es :html => {:class=> 'myCssClass', :id=>'myCssId'}) 
 #     
 render_tabnav :<%=name%>, 
               :generate_css => true do 
@@ -48,7 +48,7 @@ render_tabnav :<%=name%>,
   # add_tab :name => 'welcome', :link => {:controller=>'welcome'}
   #
   # # You can have a dynamic name or link 
-  # # (this partial is evaluated in the page context, so it sees every helper or instance variable)
+  # #(this partial is evaluated in the page context, so it sees every helper or instance variable)
   #  
   # add_tab do |t|
   #   t.named "#{current_user} details"
