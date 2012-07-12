@@ -14,7 +14,7 @@ module ApplicationHelper
     data.html_safe
   end
 
-  def create_menu_list (menu_name, with_id=true)
+  def create_menu_list(menu_name, with_id=true)
    
     returnList=[]
 
@@ -82,13 +82,13 @@ module ApplicationHelper
     end
   end
 
-  def editabletextareacreate (field_name, field_pointer)
+  def editabletextareacreate(field_name, field_pointer)
     '<div id="field_'+field_name+'" class="myaccountcontentitem">' +
       editabletextarea(field_name,field_pointer)+
       '</div>'
   end
 
-  def editabletextarea (field_name, field_pointer)
+  def editabletextarea(field_name, field_pointer)
     css_class= 'class="blocklist"'
     field_value=field_pointer[field_name]
 
@@ -103,7 +103,7 @@ module ApplicationHelper
       '</div>'
   end
 
-  def editabletextareaedit (field_name, field_pointer)
+  def editabletextareaedit(field_name, field_pointer)
     return_field=text_area_tag(field_name, field_pointer[field_name], :cols=>"80", :rows=>"20", :onkeyup=>'sz(this);',:class => "mceEditor" )
 
     #:cols=>"80", :rows=>"20",
@@ -117,16 +117,16 @@ module ApplicationHelper
 
   def editablefieldcreate(field_name,field_pointer, opts = {})
 
-    #logger.info ("opts")
+    #logger.info("opts")
     #logger.info(opts[:class])
   
     if field_pointer[field_name].class == String and field_pointer[field_name].length > 85 then
-      ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
+     ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
           best_in_place(field_pointer, field_name, :type => :textarea, :nil => "Click me to add content!", :class => opts[:class],:sanitize=>opts[:sanitize]).html_safe +
           '</div>').html_safe
     else
           
-      ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
+     ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
           best_in_place(field_pointer, field_name, :type => :input, :nil => "Click me to add content!", :class=>opts[:class], :sanitize=>opts[:sanitize]).html_safe +
           '</div>').html_safe
     end
@@ -134,14 +134,14 @@ module ApplicationHelper
 
   def editablefieldcreate2(field_name,field_pointer)
 
-    ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
+   ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
         editablefield(field_name,field_pointer)+
         '</div>').html_safe
 
   end
 
   def best_in_place(object, field, opts = {})
-    #logger.info ("best_in_place")
+    #logger.info("best_in_place")
     for item in opts do
       # logger.info(item)
     end
@@ -158,7 +158,7 @@ module ApplicationHelper
     if opts[:type] == :select && !opts[:collection].blank?
       v = object.send(field)
       #logger.info(v)
-      #logger.info (opts[:collection])
+      #logger.info(opts[:collection])
       value = Hash[opts[:collection]][!!(v =~ /^[0-9]+$/) ? v.to_i : v] || "Please Select..."
       collection = opts[:collection].to_json
     end
@@ -178,7 +178,7 @@ module ApplicationHelper
       
     #fix for rails settings gem
     object_class_name = object.class.to_s.gsub("::", "_").underscore
-    object_class_name = (object_class_name == "active_support_hash_with_indifferent_access" ? "settings" : object_class_name)
+    object_class_name =(object_class_name == "active_support_hash_with_indifferent_access" ? "settings" : object_class_name)
     
     
     
@@ -219,19 +219,19 @@ module ApplicationHelper
       css_class='class="blocklist2"'
     end
 
-    (link_to(image_tag("interface/edit.png",:border=>"0", :class=>"imagebutton"),
+   (link_to(image_tag("interface/edit.png",:border=>"0", :class=>"imagebutton"),
         {
           :action => "edit_ajax",
           :id => field_pointer.id,
           :field => field_name,
           :pointer_class=>field_pointer.class }, :remote=>true,
         :update => "field_"+field_name) +
-        ('<div '+css_class+'>'+h(field_value)+
+       ('<div '+css_class+'>'+h(field_value)+
           '</div>').html_safe)
 
   end
 
-  def editablefieldedit (field_name, field_pointer)
+  def editablefieldedit(field_name, field_pointer)
     if field_name=="password" then
       return_field=password_field_tag(field_name, field_pointer[field_name],  :class => 'input_text_field', :size=>'20', :onkeyup=>'sz(this);' ) + password_field_tag(field_name+"_check", field_pointer[field_name+"_check"],  :class => 'input_text_field', :size=>'20', :onkeyup=>'sz(this);' )
     else
@@ -254,7 +254,7 @@ module ApplicationHelper
     return return_value
   end
 
-  def editablecheckboxedit (field_name, field_pointer,field_title)
+  def editablecheckboxedit(field_name, field_pointer,field_title)
   
     check_box_tag( "#{field_name}", field_pointer.id, field_pointer[field_name], {
         :onchange => "#{remote_function(:url  => {:action => "update_checkbox", :id=>field_pointer.id, :field=>field_name ,:pointer_class=>field_pointer.class},
@@ -262,7 +262,7 @@ module ApplicationHelper
 
   end
   def ajax_select(field_name, field_object, field_pointer, value_list)
-    ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
+   ('<div id="field_'+field_name.to_s+'" class="myaccountcontentitem">' +
         best_in_place(field_pointer, field_name, :type => :select, :collection => value_list) +
         '</div>').html_safe
     #  <%= best_in_place @user, :country, :type => :select, :collection => @countries %>
@@ -286,8 +286,8 @@ module ApplicationHelper
   #
   #end
 
-  def editablecheckboxeditwdisable (field_name, field_pointer,field_title, is_disabled)
-    if (not is_disabled)
+  def editablecheckboxeditwdisable(field_name, field_pointer,field_title, is_disabled)
+    if(not is_disabled)
       spanText="<span class='disabled-text'>"+field_title+"</span>"
     else
       spanText=field_title
@@ -309,7 +309,7 @@ module ApplicationHelper
 
   end
 
-  def editablecheckboxtag  (field_name, field_pointer,field_title, tag_list_name,html_options={} )
+  def editablecheckboxtag (field_name, field_pointer,field_title, tag_list_name,html_options={} )
     tag_name="#{tag_list_name.singularize}_list"
     tag_array= field_pointer.send(tag_name)
     tag_array= tag_array.collect { |item| item.downcase.strip  }
@@ -366,7 +366,7 @@ module ApplicationHelper
 
       if user.roles.detect{|role|
           role.rights.detect{|right|
-            ((right.action == the_action_name)|(right.action == "*")|(right.action.include? the_action_name)) && right.controller == the_controller_name
+           ((right.action == the_action_name)|(right.action == "*")|(right.action.include? the_action_name)) && right.controller == the_controller_name
           }
         }
 
@@ -424,7 +424,7 @@ module ApplicationHelper
 
     if user.roles.detect{|role|
         role.rights.detect{|right|
-          ((right.action == the_action_name)|(right.action == "*")) && right.controller == the_controller_name
+         ((right.action == the_action_name)|(right.action == "*")) && right.controller == the_controller_name
         }
       }
       return link_to(*args,&block)
@@ -458,7 +458,7 @@ module ApplicationHelper
     case menuItem.m_type
     when "1"
       menuText="<span "+ span_options +">"+menuItem.name.titlecase + "</span>"
-      if (menuItem.page_id.blank?)
+      if(menuItem.page_id.blank?)
 
       else      
         class_options.merge!({:action => "show_page", :controller =>"site", :id=>menuItem.page_id})
@@ -560,7 +560,7 @@ module ApplicationHelper
     
     return "" if @menu_id==0
     
-    @menus = Menu.find(@menu_id) rescue (return(""))
+    @menus = Menu.find(@menu_id) rescue(return(""))
 
     @prehtml = params[:prehtml] || ""
     @posthtml = params[:posthtml] || ""
@@ -613,7 +613,7 @@ module ApplicationHelper
       @menus = Menu.find_menu(@menu.id)
 
       for @menu in @menus
-        # html_options = (@menu.name==@current_page ? html_options.merge!({:class=>"menu-selected"}) : html_options )
+        # html_options =(@menu.name==@current_page ? html_options.merge!({:class=>"menu-selected"}) : html_options )
         if @menu.name==@current_page
           returnMenu = returnMenu + @prehtml + "<div class='menu-selected'>" + @menu.name + "</div>" + @posthtml 
         else

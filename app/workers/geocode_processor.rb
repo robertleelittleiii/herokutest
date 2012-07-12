@@ -29,7 +29,7 @@ class GeocodeProcessor
         
         status_percent=Float(Float(index)/Float(household_count)*100)
         mission.reload
-        if (mission.status=="Cancel") then
+        if(mission.status=="Cancel") then
           mission.status="Canceling..." 
           mission.status_percent=100
           mission.status_message="Process Complete"

@@ -9,7 +9,7 @@ class FeedManagement
     return @id
   end
 
-  def initialize (attributes = {})
+  def initialize(attributes = {})
     @id=1
     @name="feed_management"
     @resource_type="feed_management"

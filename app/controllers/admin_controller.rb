@@ -35,7 +35,7 @@ class AdminController < ApplicationController
 
       @user.user_attribute = @newAttributes
     
-      #@user.shop = Shop.create(:name => (@user.name +" Store"))
+      #@user.shop = Shop.create(:name =>(@user.name +" Store"))
       @user.save
  
     end

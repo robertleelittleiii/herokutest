@@ -29,7 +29,7 @@ class Cart
     @cart_items  = Rails.cache.fetch(cart_object_id+"items", :expires_in => 24.hours) {[]}
    
     @cart=@cart_object.dup   
-    @cart.items.replace (@cart_items.dup) 
+    @cart.items.replace(@cart_items.dup) 
    
    
     #   puts("Before: #{cart_object_id}")

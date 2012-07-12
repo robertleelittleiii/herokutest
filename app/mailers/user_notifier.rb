@@ -125,7 +125,7 @@ class UserNotifier < ActionMailer::Base
     @hostfull=host
     setup_email(user)
     subject 'Your shipment has been sent'
-    body (:order=>order, :user => user, :url_base => 'http://locathost:3000/grants/show')
+    body(:order=>order, :user => user, :url_base => 'http://locathost:3000/grants/show')
     content_type "text/html"   #Here's where the magic happens
   end
 
@@ -134,7 +134,7 @@ class UserNotifier < ActionMailer::Base
     @hostfull=host
     setup_email(user)
     subject 'Thank you for your order'
-    body (:order=>order, :user => user)
+    body(:order=>order, :user => user)
     content_type "text/html"   #Here's where the magic happens
   end
 

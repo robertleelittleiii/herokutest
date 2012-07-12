@@ -228,7 +228,7 @@ class RegistrationController < ApplicationController
 
   private
 
-  # def login (username, password)
+  # def login(username, password)
   #        @junk="this is a test 2"
   #
   #    session[:main_search_status] = false

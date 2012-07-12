@@ -107,7 +107,7 @@ class OrdersController < ApplicationController
 
     @user = User.find_by_id(session[:user_id])
     @page_title = "order success"
-    @page = Page.find_all_by_title (@page_title).first
+    @page = Page.find_all_by_title(@page_title).first
 
     if params[:order].blank? then
       @order=Order.new
@@ -148,7 +148,7 @@ class OrdersController < ApplicationController
     @page_title = "order success"
     @order = Order.find(params[:id])
     @user = User.find_by_id(session[:user_id])
-    @page = Page.find_all_by_title (@page_title).first
+    @page = Page.find_all_by_title(@page_title).first
      
   end
   
@@ -157,7 +157,7 @@ class OrdersController < ApplicationController
 
     @order = Order.find(params[:id])
     @user = User.find_by_id(session[:user_id])
-    @page = Page.find_all_by_title (@page_title).first
+    @page = Page.find_all_by_title(@page_title).first
     
     render :partial=>"invoice_report", :layout=>false
   end

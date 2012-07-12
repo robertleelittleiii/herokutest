@@ -24,7 +24,7 @@ class ProductDetail < ActiveRecord::Base
 
   end
   
-  def reduce_inventory (sold_count, host) 
+  def reduce_inventory(sold_count, host) 
     self.units_in_stock = self.units_in_stock - sold_count
     if self.units_in_stock.to_i < self.product.reorder_level.to_i then
           UserNotifier.inventory_alert(self, host).deliver
