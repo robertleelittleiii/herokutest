@@ -7,7 +7,7 @@ class FeedManagementController < ApplicationController
 
   def importfile
     @filestoshow=FILESTOSHOW
-    @importers = Importer.find_all_by_importer_type ("file" , :order=>"name desc")
+    @importers = Importer.find_all_by_importer_type ("file", :order=>"name desc")
     @current_importer=:null 
     
     if params[:id].blank? then
