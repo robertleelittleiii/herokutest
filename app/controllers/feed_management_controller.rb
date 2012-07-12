@@ -7,7 +7,7 @@ class FeedManagementController < ApplicationController
 
   def importfile
     @filestoshow=FILESTOSHOW
-    @importers = Importer.find_all_by_importer_type ("file", :order=>"name desc")
+    @importers = Importer.find_all_by_importer_type("file", :order=>"name desc")
     @current_importer=:null 
     
     if params[:id].blank? then
@@ -85,7 +85,7 @@ class FeedManagementController < ApplicationController
       @current_importer=params[:id]
       
       @importers = Importer.find(:all, :order=>"name desc")
-      @importers = Importer.find_all_by_importer_type (params[:importer_type] , :order=>"name desc")
+      @importers = Importer.find_all_by_importer_type(params[:importer_type] , :order=>"name desc")
 
       puts("nameofimporter:",@importer.name)
       
@@ -137,7 +137,7 @@ class FeedManagementController < ApplicationController
       @pathtopublic = Rails.root.to_s + "/public/"  
       @fullpath = @pathtopublic+params[:file_path]
       
-      xml = File.open (@fullpath).read
+      xml = File.open(@fullpath).read
       source=XML::Parser.string(xml)
       content = source.parse
 
@@ -223,7 +223,7 @@ class FeedManagementController < ApplicationController
   def add_file_static
   
 
-    format = params[:format]
+    file_format = params[:format]
     file=params[:file]
     @filestoshow = FILESTOSHOW
     puts("file: ",file)
@@ -266,7 +266,7 @@ class FeedManagementController < ApplicationController
   def add_file
     @importer = Importer.find(params[:id])
 
-    format = params[:format]
+    file_format = params[:format]
     file=params[:file]
     @filestoshow = FILESTOSHOW
     puts("file: ",file)
@@ -397,7 +397,7 @@ class FeedManagementController < ApplicationController
     #        @importer = Importer.find(params[:id])
     @model_list=Dir.glob(RAILS_ROOT + '/app/models/*.rb')
     @model_names=@model_list.collect{|file| File.basename(file,".rb").classify}  
-    @importers = Importer.find_all_by_importer_type (params[:importer_type], :order=>"name desc")
+    @importers = Importer.find_all_by_importer_type(params[:importer_type], :order=>"name desc")
 
     #  render :partial => "set_up_importer"
 
@@ -555,7 +555,7 @@ class FeedManagementController < ApplicationController
 
   def webservicesync
     @filestoshow=FILESTOSHOW
-    @importers = Importer.find_all_by_importer_type ("web-service" , :order=>"name desc")
+    @importers = Importer.find_all_by_importer_type("web-service" , :order=>"name desc")
     @current_importer=:null 
     
     if params[:id].blank? then
@@ -600,7 +600,7 @@ class FeedManagementController < ApplicationController
     uri_command="Insert-Update"
     puts(@table_data.inspect)
     uri_string= @importer.full_uri_path + "?" + "login=" + @importer.login_id + "&" + "EncryptedPassword=" + @importer.password + "&" + "Import=" + uri_command 
-    uri = URI.parse (uri_string)
+    uri = URI.parse(uri_string)
       
     #  uri=URI.parse('http://v833920.e3wxp2dno7n6.demo5.volusion.com/net/WebService.aspx?Login=little@mac.com&EncryptedPassword=0E0517191356E9B4977B38E3E51B1F4928014F95B31FC2AC8E75C50501E12D6C&Import=Insert')
 
@@ -680,7 +680,7 @@ class FeedManagementController < ApplicationController
      
     pathtopublic = Rails.root.to_s + "/public/data_import" 
     fullpath = pathtopublic + "/" + "products_export.xml"
-    xml = File.open (fullpath).read
+    xml = File.open(fullpath).read
     
     # uri_string= @importer.full_uri_path + "?" + "login=" + @importer.login_id + "&" + "EncryptedPassword=" + @importer.password + "&" + "Import=" + uri_command 
     uri=URI.parse('http://rmrkz.cpgnd.servertrust.com/net/WebService.aspx?Login=avenelpharmacy@gmail.com&EncryptedPassword=7E23F162AC864A0EF33E9F0D991C8077B3B4C9E8FCF6CDE8DA9F1B4ABABE6719&EDI_Name=Generic\\Products&SELECT_Columns=*')
