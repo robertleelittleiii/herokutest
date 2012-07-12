@@ -64,7 +64,7 @@ module SiteHelper
       return returnval.html_safe
     else
       return ""
-    end
+    end rescue return ""
   end  
 
 
